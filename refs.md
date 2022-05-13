@@ -16,3 +16,6 @@ https://vuejs.org/guide/introduction.html
 
 ###### Модифиаторы событий мыши
   https://vuejs.org/guide/essentials/event-handling.html#mouse-button-modifiers
+
+### v-model
+  https://vuejs.org/api/built-in-directives.html#v-model
