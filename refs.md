@@ -4,14 +4,14 @@ https://vuejs.org/guide/introduction.html
 ### Модификаторы
   https://vuejs.org/guide/essentials/forms.html#modifiers
   
-  ###### Модифиаторы кнопок
+###### Модифиаторы кнопок
   https://vuejs.org/guide/essentials/event-handling.html#key-modifiers
   https://vuejs.org/guide/essentials/forms.html#modifiers
 
-  ###### Модифиаторы событий
+###### Модифиаторы событий
   https://vuejs.org/guide/essentials/event-handling.html#event-modifiers
 
-  ###### Модифиаторы системных событий
+###### Модифиаторы системных событий
   https://vuejs.org/guide/essentials/event-handling.html#system-modifier-keys
 
 ###### Модифиаторы событий мыши

@@ -26,22 +26,30 @@
   <!-- Корневой элемент для vue -->
   <div class="container" id="todo">
     <label for="">
-      <h4>{{ title }}</h4>
+      <h3>{{ title }}</h3>
     </label>
-    <input
-      type="text"
-      name=""
-      id=""
-      value=""
-      v-bind:placeholder="placeholderValue" 
-      v-bind:value="inputValue" 
-      v-on:input="inputChangeHandler"
-      v-on:keypress.enter="addTodoItem"
+    <input 
+      type="text" 
+      name="" 
+      id="" 
+      value="" 
+      v-model="inputValue"
+      @:keypress.enter="addTodoItem" 
+      :placeholder="placeholderValue" 
       />
+      <!-- 
+        v-bind:value="inputValue" 
+        v-on:input="inputValueHandler" 
+        заменили на
+        v-model="inputValue"
+        справка: https://vuejs.org/api/built-in-directives.html#v-model
+      --->
+      <!-- v-bind: можно записывать просто как : -->
+      <!-- v-on: можно записывать просто как @ -->
       <!-- 
         v-on:keypress.enter - .enter - это модификатор к keypress со стандартными значениями js например "Enter"
         https://vuejs.org/guide/essentials/event-handling.html#event-modifiers
-      -->
+      --->
       <!-- v-on:keypress="inputKeypressHandler" -->
       <!-- v-bind: привязывает vuejs (который указывается в кавычках) к атрибуту -->
     <br>
@@ -51,19 +59,26 @@
       v-on:click="addTodoItem"
       >Добавить</button>
     <hr>
-    <ul class="todo__list">
+    <ul class="todo__list" v-if="notes.length !== 0">
       <li 
-        class="todo__item"
-        v-for="(noteItem, i) in notes"
+        class="todo__item" 
+        v-for="(noteItem, i) in notes" 
       >
-        {{++i}}: {{ noteItem }}
+        {{ i+1 }}: {{ noteItem }}
         <button 
           class="todo__item-remove"
-          v-on:click="noteItemRemove(i, $event)"
+          v-on:click="removeTodoItem(i, $event)"
         >Удалить</button>
         <!-- $event обозначает что туда передаём обычные браузерные события, а не свою переменную, например событие event -->
       </li>
+      <hr>
+      <li>
+        <strong>Удвоенное кол-во: {{ doubleCount }}</strong>
+      </li>
     </ul>
+
+    <h4 class="todo__info" v-else>Заметок пока нет, можете добавить!</h4>
+
   </div>
 
   <script src="https://unpkg.com/vue@3"></script>
