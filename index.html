@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Корневой элемент для vue -->
+  <!-- <div class="container" id="learn">
+    <label for="">
+      <h4>Счётчик</h4>
+      <h4 type="text" class="output">{{ output }}</h4>
+    </label>
+    <br>
+    <br>
+    <button class="plus" v-on:click="output++">плюс</button>
+    <button class="minus" v-on:click="output--">минус</button>
+  </div> -->
+
+  <!-- Корневой элемент для vue -->
+  <div class="container" id="todo">
+    <label for="">
+      <h4>{{ title }}</h4>
+    </label>
+    <input
+      type="text"
+      name=""
+      id=""
+      value=""
+      v-bind:placeholder="placeholderValue" 
+      v-bind:value="inputValue" 
+      v-on:input="inputChangeHandler"
+      v-on:keypress.enter="addTodoItem"
+      />
+      <!-- 
+        v-on:keypress.enter - .enter - это модификатор к keypress со стандартными значениями js например "Enter"
+        https://vuejs.org/guide/essentials/event-handling.html#event-modifiers
+      -->
+      <!-- v-on:keypress="inputKeypressHandler" -->
+      <!-- v-bind: привязывает vuejs (который указывается в кавычках) к атрибуту -->
+    <br>
+    <br>
+    <button
+      class="todo__add"
+      v-on:click="addTodoItem"
+      >Добавить</button>
+    <hr>
+    <ul class="todo__list">
+      <li 
+        class="todo__item"
+        v-for="(noteItem, i) in notes"
+      >
+        {{++i}}: {{ noteItem }}
+        <button 
+          class="todo__item-remove"
+          v-on:click="noteItemRemove(i, $event)"
+        >Удалить</button>
+        <!-- $event обозначает что туда передаём обычные браузерные события, а не свою переменную, например событие event -->
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="js/learn.js"></script>
+  <script src="js/todo.js"></script>
+</body>
+
+</html>
