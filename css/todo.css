@@ -1,0 +1,10 @@
+[v-cloak] {
+  visibility: hidden;
+}
+
+.--red {
+  color: red;
+}
+.--black {
+  color: black;
+}

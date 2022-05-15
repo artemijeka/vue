@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- Корневой элемент для vue -->
+  <div class="container" id="learn">
+    <label for="">
+      <h4>Счётчик</h4>
+      <h4 type="text" class="output">{{ output }}</h4>
+    </label>
+    <br>
+    <br>
+    <button class="plus" v-on:click="output++">плюс</button>
+    <button class="minus" v-on:click="output--">минус</button>
+  </div>
+
+
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="js/learn.js"></script>
+</body>
+
+</html>

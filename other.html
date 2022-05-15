@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  
+  <!-- Корневой элемент для vue -->
+  <link rel="stylesheet" href="css/other.css">
+
+  <div class="container" id="other" v-cloak>
+
+    <h1 v-text="title"></h1>
+    <div v-html="html"></div>
+
+    <ul class="list">
+      <li 
+        class="list__item" 
+        v-for="(item, i) in 7">
+        <strong>{{item}}</strong> index = {{i}}
+      </li>
+    </ul>
+
+
+    
+    <ul class="list">
+      <li 
+        class="list__item" 
+        v-for="(value, key) in person">
+        <strong>{{key + ': ' + value}}</strong>
+      </li>
+    </ul>
+    
+    
+
+    добавление по ctrl+enter
+    <br>
+    <!-- .exact модификатор нужен чтобы задействовать ТОЛЬКО ТОЧНОЕ нажатие сочетания клавиш -->
+    <input 
+      type="text" 
+      @keyup.ctrl.enter.exact="addListItem" 
+      ref="myInput"><!-- ref - это дирректива VueJS (от слова reference - ссылка) передаёт ссылку на этот узел node там это используется в methods вот так: this.$refs.myInput.value -->
+      <br>
+      чтобы удалить элемент надо нажать правой кнопкой мыши по номеру
+      <ul
+      class="list"
+      v-if="items.length"><!-- itemsEven это геттер из computed который выдаёт массив чётных значений -->
+      <li 
+        class="list__item c-pointer" 
+        v-for="(item, i) in items" 
+        @click.right.prevent="removeItem(i), log(item)" 
+        :key="item" 
+      >
+        <!-- задание :key="" - это как в reactjs для того чтобы virtual DOM vuejs знал чем отличаются элементы при динамическом взаимодействии например для удаления -->
+        <strong>{{item}}&nbsp;&nbsp;</strong>
+        <!-- stopPropagation() в .methods -->
+        <input 
+          type="text" 
+          @click.right="stopPropagation">
+        <input 
+          type="text" 
+          @click.right.stop><!-- или stopPropagation модификатором .stop -->
+      </li>
+    </ul>эти input только для показа как остановить всплытие события до родительского элемента
+    <h3 v-else>Элементов нет в списке (v-else)</h3>
+    <h3 v-show="items.length === 0">Элементов нет в списке (v-show)</h3>
+    
+  </div>
+  
+  
+  
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="js/other.js"></script>
+</body>
+
+</html>
