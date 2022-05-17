@@ -1,24 +1,61 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div>
+
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="./assets/logo.svg"
+      width="125"
+      height="125"
+    />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <form @submit.prevent="submit">
+        <input type="email" name="email" id="email" v-model="form.email" />
+        <input type="password" name="password" id="password" v-model="form.password" />
+        <button type="submit">submit</button>
+      </form>
     </div>
-  </header>
+    
+    {{form}}
 
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
+
+
+<script>
+import { useForm } from "./use/form";
+
+export default {
+  setup() {
+    const form = useForm({
+      email: {
+        value: "some@email.ru",
+        validators: { required },
+      },
+      password: {
+        value: "somepassword",
+        validators: { required, minLength: minLength(8) },
+      },
+    });
+
+    console.log(form.password);
+
+    function submit() {}
+
+    return { form, submit };
+  },
+};
+
+const required = (value) => !!value; //дважды инверсия чтобы булево значение получить
+const minLength = (length) => (value) => value.length >= length;
+</script>
+
+
+
 <style>
-@import './assets/base.css';
+@import "./assets/base.css";
 
 #app {
   max-width: 1280px;
