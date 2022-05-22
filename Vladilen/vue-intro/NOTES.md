@@ -1,0 +1,1 @@
+V [Vue 3 Основы для Начинающих - Полный Курс [2021]](https://www.youtube.com/watch?v=p059z-0JTFg)

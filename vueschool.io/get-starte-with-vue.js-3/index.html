@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <div id="shop">
+
+    <input v-model="heading" type="text">
+
+    <h1>{{ heading.toLocaleUpperCase() || 'Welcome!' }}</h1>
+
+    <button v-if="editing" @click="doEditing(false)">Cancel</button>
+    <button v-else @click="doEditing(true)">Add Item</button>
+
+    <div v-if="editing" class="form-add-item">
+      <input
+        type="text"
+        placeholder="Добавить задачу!"
+        v-model.lazy.trim="newItem"
+        @keyup.enter="addNewItem"><!-- .lazy для того чтобы не в реальном времени а при отправке -->
+      <br>
+
+      <button
+        @click="addNewItem">Save</button>
+
+      <br>
+
+      <br>
+      <label>
+        <input type="checkbox" name="" id="" v-model="newItemHighPriority">
+        High priority
+      </label>
+      <br>
+      {{newItem}} {{newItemHighPriority}}
+      <br>
+    </div>
+
+    <p v-if="items.length === 0">Все задачи выполнены!</p>
+
+    <ul>
+      <li v-for="(item, i) in items" :key="item.id">
+        {{i+1}} - {{item.val}}
+      </li>
+      <!-- <li v-for="{id, val} in items" :key="id">
+        {{val}}
+      </li> -->
+    </ul>
+
+    <label><input v-model="iceCreamFlavors" value="Ice Cream №1" type="checkbox">Ice Cream №1</label>
+    <label><input v-model="iceCreamFlavors" value="Ice Cream №2" type="checkbox">Ice Cream №2</label>
+    <label><input v-model="iceCreamFlavors" value="Ice Cream №3" type="checkbox">Ice Cream №3</label>
+    <label><input v-model="iceCreamFlavors" value="Ice Cream №4" type="checkbox">Ice Cream №4</label>
+
+  </div>
+
+
+
+  <script src="https://unpkg.com/vue@3"></script>
+
+  <script>
+    const shop = Vue.createApp({
+      data() {
+        return {
+          heading: 'Hello!',
+          editing: false,
+          items: [
+            { id: 1, val: 'задача'},
+            { id: 2, val: 'задача'},
+            { id: 3, val: 'задача'},
+          ],
+          newItem: '',
+          newItemHighPriority: false,
+          iceCreamFlavors: [],
+        }
+      },
+      methods: {
+        addNewItem() {
+          this.items.push( { id: this.items.length + 1, val: this.newItem } )
+          this.newItem = ''
+        },
+        doEditing(editing) {
+          this.editing = editing
+          this.newItem = ''
+        }
+      }
+    }).mount('#shop')
+  </script>
+
+</body>
+
+</html>
