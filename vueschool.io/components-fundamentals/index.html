@@ -15,22 +15,40 @@
 
   <div id="vue">
 
+    <click-counter></click-counter>
+    <click-counter></click-counter>
+    <click-counter></click-counter>
+
+    <plan-list></plan-list>
+
+    <!-- <plan v-for="task in plans" :name="task"></plan> -->
 
   </div>
+
+  <script type="text/x-template" id="click-counter-template">
+    <button @click="count++">{{count}}</button>
+  </script>
+
+  <script type="text/x-template" id="plan-list-item-template">
+    <h4 :class="{'active': selected}" @click="select">
+      {{name}}
+    </h4>
+  </script>
+
+  <script type="text/x-template" id="plan-list-template">
+    <plan-item
+      v-for="task in plans"
+      :name="task"
+      @select="selectTask"
+      :selected="task === selectedTask"
+      >
+    </plan-item>
+  </script>
 
 
 
   <script src="https://unpkg.com/vue@3"></script>
-
-  <script>
-    const shop = Vue.createApp({
-      data() {
-        return {
-         
-        }
-      },      
-    }).mount('#vue')
-  </script>
+  <script src="main.js"></script>
 
 </body>
 

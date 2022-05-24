@@ -1,1 +1,1 @@
-https://vueschool.io/courses/vue-js-3-components-fundamentals
+https://vueschool.io/lessons/vue-3-component-slots
