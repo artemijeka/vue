@@ -1,1 +1,0 @@
-https://vueschool.io/lessons/html-attribute-binding-in-vue-3
