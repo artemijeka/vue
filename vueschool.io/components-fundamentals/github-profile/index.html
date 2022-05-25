@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+  <div id="vue" class="ui container">
+
+    <h1>Github user card</h1>
+
+    <github-user-card v-for="username in usernames" :username="username"></github-user-card>
+
+  </div>
+
+
+
+  <script type="text/x-template" id="github-user-card-template">
+    <div class="ui card">
+      <div class="image">
+        <img :src="user.avatar_url">
+      </div>
+      <div class="content">
+        <a :href="user.html_url" class="header">{{user.name}}</a>
+        <div class="meta">
+          <span class="date">Joined in {{user.created_at}}</span>
+        </div>
+        <div class="description">
+          {{user.bio}}
+        </div>
+      </div>
+      <div class="extra content">
+        <a :href="user.html_url+'?tab=followers'">
+          <i class="user icon"></i>
+          {{user.followers}}
+        </a>
+      </div>
+    </div>
+  </script>
+
+
+
+  <script src="https://unpkg.com/vue@3"></script>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="semantic/semantic.min.js"></script>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

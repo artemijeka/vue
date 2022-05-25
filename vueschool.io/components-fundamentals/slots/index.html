@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+  <div id="vue">
+
+    <todo-item>Test</todo-item>
+    <todo-item>Test 2</todo-item>
+    <todo-item>
+      Test 3
+      <template v-slot:descr>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quo nobis nesciunt dignissimos amet deleniti aliquam temporibus aliquid, quibusdam earum explicabo, repudiandae tempore. Ratione possimus eius provident molestiae explicabo officia et consequatur eos natus magnam tempore corporis, saepe, porro dignissimos reiciendis placeat labore alias deleniti doloremque voluptas tempora dolore adipisci?</p>
+      </template>
+      <template #button-text>Custom name</template><!-- v-slot: можно заменить на "#" -->
+    </todo-item>
+
+  </div>
+
+  <script type="text/x-template" id="todo-item-template">
+    <label :class="{'--done': done}">
+      <input type="checkbox" v-model="done">
+      <slot><!-- Для трансляции содержимого контента между тегами "<todo-item><p>контент</p></todo-item>" --></slot>
+    </label>
+    <slot name="descr"></slot>
+    <button><slot name="button-text">Default name</slot></button>
+    <br>
+    <br>
+  </script>
+
+
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+  <div id="vue" class="ui container">
+
+    <h1>Notification message</h1>
+
+    <notification-message type="error" heading="Oh no!">
+      <p>We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.</p>
+    </notification-message>
+
+    <notification-message type="success" heading="Oh yeah!">
+      <p>We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.</p>
+    </notification-message>
+
+    <notification-message>
+      <p>Good morning!</p>
+    </notification-message>
+
+  </div>
+
+  <script type="text/x-template" id="notification-message-template">
+    <div class="ui message" :class="[type, hidden?'--hidden':'' ]">
+      <i class="close" @click="hide">&times;</i>
+      <div class="header">
+        {{heading}}
+      </div>
+      <slot></slot>
+    </div>
+  </script>
+
+
+
+
+
+  <script src="https://unpkg.com/vue@3"></script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="semantic/semantic.min.js"></script>
+
+  <script src="boilerplate.js"></script>
+
+</body>
+
+</html>
