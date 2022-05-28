@@ -1,45 +1,53 @@
 import { createRouter, createWebHashHistory } from "vue-router"
-import HomeView from "../views/HomeView.vue"
-import BrazilPage from "../views/BrazilPage"
-import JamaicaPage from "../views/JamaicaPage"
-import PanamaPage from "../views/PanamaPage"
-import HawaiiPage from "../views/HawaiiPage"
+import HomeView from "@/views/HomeView.vue"
+import BrazilPage from "@/views/BrazilPage"
+import JamaicaPage from "@/views/JamaicaPage"
+import PanamaPage from "@/views/PanamaPage"
+import HawaiiPage from "@/views/HawaiiPage"
+import DestinationDetails from "@/views/DestinationDetails"
 
 const routes = [
   {
     path: "/",
     name: "home",
-    // Lazy load views
-    // component: () => import(/* webpackChunkName: "home" */ '@/views/HomeView.vue'),
     component: HomeView,
+    // Or lazy load views
+    // component: () => import(/* webpackChunkName: "home" */ '@/views/HomeView.vue'),
   },
   {
     path: "/brazil",
     name: "brazil",
-    // Lazy load views
-    // component: () => import(/* webpackChunkName: "brazil" */ '@/views/BrazilPage.vue'),
     component: BrazilPage,
+    // Or lazy load views
+    // component: () => import(/* webpackChunkName: "brazil" */ '@/views/BrazilPage.vue'),
   },
   {
     path: "/jamaica",
     name: "jamaica",
-    // Lazy load views
-    // component: () => import(/* webpackChunkName: "jamaica" */ '@/views/JamaicaPage.vue'),
     component: JamaicaPage,
+    // Or lazy load views
+    // component: () => import(/* webpackChunkName: "jamaica" */ '@/views/JamaicaPage.vue'),
   },
   {
     path: "/panama",
     name: "panama",
-    // Lazy load views
-    // component: () => import(/* webpackChunkName: "panama" */ '@/views/PanamaPage.vue'),
     component: PanamaPage,
+    // Or lazy load views
+    // component: () => import(/* webpackChunkName: "panama" */ '@/views/PanamaPage.vue'),
   },
   {
     path: "/hawaii",
     name: "hawaii",
-    // Lazy load views
-    // component: () => import(/* webpackChunkName: "hawaii" */ '@/views/HawaiiPage.vue'),
     component: HawaiiPage,
+    // Or lazy load views
+    // component: () => import(/* webpackChunkName: "hawaii" */ '@/views/HawaiiPage.vue'),
+  },
+  {
+    path: "/details",
+    name: "details",
+    component: DestinationDetails,
+    // Or lazy load views
+    // component: () => import(/* webpackChunkName: "details" */ '@/views/DestinationDetails.vue'),
   },
   // {
   //   path: "/about",
