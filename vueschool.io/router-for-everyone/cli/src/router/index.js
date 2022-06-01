@@ -43,7 +43,7 @@ const routes = [
     // component: () => import(/* webpackChunkName: "hawaii" */ '@/views/HawaiiPage.vue'),
   },
   {
-    path: "/details",
+    path: "/details/:id",
     name: "details",
     component: DestinationDetails,
     // Or lazy load views
