@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="js/vue.global.min.js"></script>
+  <!-- <script src="js/vue.runtime.global.prod.min.js"></script> -->
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>Transition component</title>
+
+</head>
+
+<body>
+
+
+
+  <!-- ??? type со значением animation или transition ??? -->
+  <!-- ??? <transition :duration="1000">...</transition> -->
+  <!-- ??? <transition :duration="{ enter: 500, leave: 800 }">...</transition> -->
+
+
+
+  <div id="demo1">
+    <button @click="show = !show">
+      Переключить
+    </button>
+
+    <transition name="fade">
+      <p v-if="show">привет</p>
+    </transition>
+  </div>
+
+
+
+  <div id="demo2">
+    <button @click="show = !show">
+      Переключить отображение
+    </button>
+
+    <transition name="slide-fade">
+      <p v-if="show">привет</p>
+    </transition>
+  </div>
+
+
+
+  <div id="demo3">
+    <button @click="show = !show">Переключить отображение</button>
+    <transition name="bounce">
+      <p v-if="show">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis
+        enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi
+        tristique senectus et netus.
+      </p>
+    </transition>
+  </div>
+
+
+
+  <!-- #demo4 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css" rel="stylesheet"
+    type="text/css" />
+
+  <div id="demo4">
+    <button @click="show = !show">
+      Переключить отображение
+    </button>
+
+    <transition name="custom-classes-transition" enter-active-class="animate__animated animate__tada"
+      leave-active-class="animate__animated animate__bounceOutRight">
+      <p v-if="show">привет</p>
+    </transition>
+  </div>
+
+
+
+  <!-- #demo5 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+
+  <div id="demo5">
+    <button @click="show = !show">
+      Переключить отображение
+    </button>
+
+    <transition @before-enter="beforeEnter" @enter="enter" @leave="leave" :css="false">
+      <div class="box" v-if="show"></div>
+    </transition>
+  </div>
+
+
+
+  <div id="demo6">
+    <!-- out-in: Сначала исчезает старый элемент и только после этого появляется новый. -->
+    <transition name="mode-fade" mode="out-in">
+      <button v-if="on" key="on" @click="on = false">
+        on
+      </button>
+      <button v-else key="off" @click="on = true">
+        off
+      </button>
+    </transition>
+  </div>
+
+
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

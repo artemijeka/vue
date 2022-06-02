@@ -18,7 +18,7 @@
 #### Переходы и анимации
   (Vue 3)
     https://v3.ru.vuejs.org/ru/guide/transitions-overview.html
-    ...https://v3.ru.vuejs.org/ru/guide/transitions-overview.html#функции-плавности
+    ...https://v3.ru.vuejs.org/ru/guide/transitions-enterleave.html#анимация-перехода-между-компонентами
   (Vue 2) 
     https://ru.vuejs.org/v2/guide/transitions.html
 

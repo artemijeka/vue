@@ -1,0 +1,90 @@
+#demo1 .fade-enter-active,
+#demo1 .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+#demo1 .fade-enter-from,
+#demo1 fade-leave-to {
+  opacity: 0;
+}
+
+
+
+/* Анимации появления и исчезновения могут иметь    */
+/* различные продолжительности и функции плавности. */
+#demo2 .slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+#demo2 .slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+#demo2 .slide-fade-enter-from,
+#demo2 .slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+
+
+#demo3 .bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+#demo3 .bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+#demo5 .box {
+  width: 30px;
+  height: 30px;
+  background: teal;
+  margin-top: 20px;
+}
+
+
+
+#demo6 {
+  position: relative;
+}
+
+#demo6 button {
+  position: absolute;
+}
+
+#demo6 .mode-fade-enter-active, .mode-fade-leave-active {
+  transition: opacity .5s ease
+}
+
+#demo6 .mode-fade-enter-from, .mode-fade-leave-to {
+  opacity: 0
+}
+
+#demo6 button {
+  background: #05ae7f;
+  border-radius: 4px;
+  display: inline-block;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
