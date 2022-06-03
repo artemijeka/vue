@@ -19,12 +19,6 @@
 
 
 
-  <!-- ??? type со значением animation или transition ??? -->
-  <!-- ??? <transition :duration="1000">...</transition> -->
-  <!-- ??? <transition :duration="{ enter: 500, leave: 800 }">...</transition> -->
-
-
-
   <div id="demo1">
     <button @click="show = !show">
       Переключить
@@ -67,6 +61,8 @@
     type="text/css" />
 
   <div id="demo4">
+    <h2>Переопределение классов: анимаций и переходов Vue</h2>
+
     <button @click="show = !show">
       Переключить отображение
     </button>
@@ -83,6 +79,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
 
   <div id="demo5">
+    <h2>Хуки с Gsap</h2>
+
     <button @click="show = !show">
       Переключить отображение
     </button>
@@ -95,7 +93,8 @@
 
 
   <div id="demo6">
-    <!-- out-in: Сначала исчезает старый элемент и только после этого появляется новый. -->
+    <!-- out-in - сначала исчезает старый элемент и только после этого появляется новый -->
+    <!-- in-out - наоборот -->
     <transition name="mode-fade" mode="out-in">
       <button v-if="on" key="on" @click="on = false">
         on
@@ -104,6 +103,45 @@
         off
       </button>
     </transition>
+  </div>
+
+
+
+  <div id="demo7">
+    <h2>Динамический компонент</h2>
+    <input v-model="view" type="radio" value="v-a" id="a"><label for="a">A</label>
+    <input v-model="view" type="radio" value="v-b" id="b"><label for="b">B</label>
+    <transition name="component-fade" mode="out-in">
+      <component :is="view"></component>
+    </transition>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+
+  <div id="demo8" class="demo">
+    <button @click="shuffle">Перемешать</button>
+    <button @click="add">Добавить</button>
+    <button @click="remove">Удалить</button>
+    <transition-group name="list-complete" tag="p">
+      <span v-for="item in items" :key="item" class="list-complete-item">
+        {{ item }}
+      </span>
+    </transition-group>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+  <div id="demo9">
+    <input v-model="query" />
+    <transition-group name="staggered-fade" tag="ul" :css="false" @before-enter="beforeEnter" @enter="enter"
+      @leave="leave">
+      <li v-for="(item, index) in computedList" :key="item.msg" :data-index="index">
+        {{ item.msg }}
+      </li>
+    </transition-group>
   </div>
 
 

@@ -1,3 +1,17 @@
+[id^="demo"] {
+  min-height: 35px;
+  margin-top: 35px;
+  padding-bottom: 35px;
+
+  border-bottom: 1px solid black;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+
+
 #demo1 .fade-enter-active,
 #demo1 .fade-leave-active {
   transition: opacity 0.5s ease;
@@ -31,16 +45,20 @@
 #demo3 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }
+
 #demo3 .bounce-leave-active {
   animation: bounce-in 0.5s reverse;
 }
+
 @keyframes bounce-in {
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1.25);
   }
+
   100% {
     transform: scale(1);
   }
@@ -65,11 +83,13 @@
   position: absolute;
 }
 
-#demo6 .mode-fade-enter-active, .mode-fade-leave-active {
+#demo6 .mode-fade-enter-active,
+.mode-fade-leave-active {
   transition: opacity .5s ease
 }
 
-#demo6 .mode-fade-enter-from, .mode-fade-leave-to {
+#demo6 .mode-fade-enter-from,
+.mode-fade-leave-to {
   opacity: 0
 }
 
@@ -87,4 +107,41 @@
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+
+
+#demo7 .component-fade-enter-active,
+#demo7 .component-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+#demo7 .component-fade-enter-from,
+#demo7 .component-fade-leave-to {
+  opacity: 0;
+}
+
+
+
+/* Запомните, что FLIP-анимации не работают с элементами display: inline. В таких случаях можно воспользоваться display: inline-block или расположить элементы внутри flex-контейнера. */
+#demo8 .list-complete-item {
+  transition: all 0.8s ease;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#demo8 .list-complete-enter-from,
+#demo8 .list-complete-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#demo8 .list-complete-leave-active {
+  position: absolute;
+}
+
+
+
+#demo9 {
+  min-height: 170px;
 }

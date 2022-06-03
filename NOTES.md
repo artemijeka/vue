@@ -7,18 +7,18 @@
 
 ------------------------------------------------------------
 #### Vue.js 3 Fundamentals with the Options API
-  > V https://vueschool.io/courses/vuejs-3-fundamentals
+  V https://vueschool.io/courses/vuejs-3-fundamentals
 
 #### Vue.js 3 Components Fundamentals
-  > V https://vueschool.io/courses/vue-js-3-components-fundamentals
+  V https://vueschool.io/courses/vue-js-3-components-fundamentals
 
 #### Vue 3 Основы для Начинающих - Полный Курс [2021]
-  > V https://www.youtube.com/watch?v=p059z-0JTFg
+  V https://www.youtube.com/watch?v=p059z-0JTFg
 
 #### Переходы и анимации
   (Vue 3)
     https://v3.ru.vuejs.org/ru/guide/transitions-overview.html
-    ...https://v3.ru.vuejs.org/ru/guide/transitions-enterleave.html#анимация-перехода-между-компонентами
+    ...https://v3.ru.vuejs.org/ru/guide/transitions-list.html#динамические-переходы
   (Vue 2) 
     https://ru.vuejs.org/v2/guide/transitions.html
 
