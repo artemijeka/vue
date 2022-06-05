@@ -16,9 +16,8 @@
   V https://www.youtube.com/watch?v=p059z-0JTFg
 
 #### Переходы и анимации
-  (Vue 3)
+  V (Vue 3)
     https://v3.ru.vuejs.org/ru/guide/transitions-overview.html
-    ...https://v3.ru.vuejs.org/ru/guide/transitions-list.html#динамические-переходы
   (Vue 2) 
     https://ru.vuejs.org/v2/guide/transitions.html
 
