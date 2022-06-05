@@ -18,7 +18,7 @@
 #### Переходы и анимации
   V (Vue 3)
     https://v3.ru.vuejs.org/ru/guide/transitions-overview.html
-  (Vue 2) 
+  V (только в теории) (Vue 2) 
     https://ru.vuejs.org/v2/guide/transitions.html
 
 #### Vue Router for Everyone
