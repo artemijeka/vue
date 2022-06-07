@@ -1,18 +1,28 @@
 #### cdnjs.cloudflare.com
   https://cdnjs.com/libraries/vue
 
-#### Vue GUI
-  Если разработка велась в vue/cli `npm install -g @vue/cli`
-    то можно запустить `vue ui`
+#### Системы сборки
+  ./builders/
+
+#### Установка
+  Vue предоставляет инструменты для создания однофайловых компонентов (также именуемых как SFC). Если хотите их использовать, то также потребуется установить @vue/compiler-sfc:
+    npm install -D @vue/compiler-sfc
+
+#### Обновление
+  При обновлении версии vue, необходимо также обновить @vue/compiler-sfc чтобы снова соответствовать ей.
+
+#### Мини версия 
+  Если требуется просто улучшить статичный HTML лёгкими взаимодействиями, то обратите также внимание на 
+    petite-vue, 
+      https://github.com/vuejs/petite-vue
+    подмножество Vue, размером 6 КБайт, оптимизированное для прогрессивного улучшения.
 
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/introduction.html#начало-работы
-    https://v3.ru.vuejs.org/ru/guide/installation.html#установка
-      https://v3.ru.vuejs.org/ru/guide/installation.html#npm
-        https://v3.ru.vuejs.org/ru/guide/single-file-component.html#введение
-          https://v3.ru.vuejs.org/ru/api/sfc-spec.html#языковые-секции
+  https://v3.ru.vuejs.org/ru/guide/introduction.html#декларативная-отрисовка
+  or:
+  <!-- practice->frameworks->vue->...v3.ru.vuejs.org -->
 
 #### Vue.js 3 Fundamentals with the Options API
   V https://vueschool.io/courses/vuejs-3-fundamentals
