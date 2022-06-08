@@ -11,7 +11,7 @@
 #### Обновление
   При обновлении версии vue, необходимо также обновить @vue/compiler-sfc чтобы снова соответствовать ей.
 
-#### Мини версия 
+#### Мини версия vue 
   Если требуется просто улучшить статичный HTML лёгкими взаимодействиями, то обратите также внимание на 
     petite-vue, 
       https://github.com/vuejs/petite-vue
@@ -20,9 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/introduction.html#декларативная-отрисовка
-  or:
-  <!-- practice->frameworks->vue->...v3.ru.vuejs.org -->
+  practice->frameworks->vue->...doc
 
 #### Vue.js 3 Fundamentals with the Options API
   V https://vueschool.io/courses/vuejs-3-fundamentals
