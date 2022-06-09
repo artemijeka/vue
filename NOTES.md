@@ -20,7 +20,8 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  practice->frameworks->vue->...doc
+  https://v3.ru.vuejs.org/ru/guide/computed.html#вычисляемые-своиства
+  <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
   V https://vueschool.io/courses/vuejs-3-fundamentals
