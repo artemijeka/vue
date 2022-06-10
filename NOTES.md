@@ -20,7 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/computed.html#вычисляемые-своиства
+  https://v3.ru.vuejs.org/ru/guide/computed.html#кэширование-вычисляемых-своиств-vs-методы
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
