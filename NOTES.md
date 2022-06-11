@@ -20,7 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/list.html#отрисовка-списков
+  https://v3.ru.vuejs.org/ru/guide/events.html#прослушивание-событии
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
