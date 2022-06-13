@@ -20,7 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/forms.html#обычное-использование
+  https://v3.ru.vuejs.org/ru/guide/component-basics.html#прослушивание-событии-из-дочерних-компонентов-в-родительских-компонентах
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
