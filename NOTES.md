@@ -20,7 +20,10 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/component-basics.html#прослушивание-событии-из-дочерних-компонентов-в-родительских-компонентах
+  https://v3.ru.vuejs.org/ru/guide/component-basics.html#особенности-парсинга-dom-шаблона
+    https://v3.ru.vuejs.org/ru/guide/component-custom-events.html#стиль-именования-событии
+    https://v3.ru.vuejs.org/ru/guide/component-slots.html
+    https://v3.ru.vuejs.org/ru/guide/component-dynamic-async.html
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
