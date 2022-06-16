@@ -20,7 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/component-slots.html#деструктуризация-входных-параметров-слота
+  https://v3.ru.vuejs.org/ru/guide/transitions-overview.html#использование-классов-для-анимации-и-переходов
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
