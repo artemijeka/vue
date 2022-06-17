@@ -20,7 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/transitions-overview.html#использование-классов-для-анимации-и-переходов
+  https://v3.ru.vuejs.org/ru/guide/transitions-list.html#анимация-перемещения-элементов-списка
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
