@@ -20,7 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/transitions-list.html#анимация-перемещения-элементов-списка
+  https://v3.ru.vuejs.org/ru/guide/composition-api-introduction.html#реактивные-переменные-с-помощью-ref
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
