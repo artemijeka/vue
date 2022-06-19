@@ -20,7 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/composition-api-setup.html#функция-setup
+  https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
