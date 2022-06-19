@@ -20,7 +20,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/composition-api-introduction.html#реактивные-переменные-с-помощью-ref
+  https://v3.ru.vuejs.org/ru/guide/composition-api-setup.html#функция-setup
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
