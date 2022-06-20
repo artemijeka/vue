@@ -1,15 +1,8 @@
 #### cdnjs.cloudflare.com
   https://cdnjs.com/libraries/vue
 
-#### Системы сборки
+#### Установка и системы сборки
   ./builders/
-
-#### Установка
-  Vue предоставляет инструменты для создания однофайловых компонентов (также именуемых как SFC). Если хотите их использовать, то также потребуется установить @vue/compiler-sfc:
-    npm install -D @vue/compiler-sfc
-
-#### Обновление
-  При обновлении версии vue, необходимо также обновить @vue/compiler-sfc чтобы снова соответствовать ей.
 
 #### Мини версия vue 
   Если требуется просто улучшить статичный HTML лёгкими взаимодействиями, то обратите также внимание на 
@@ -20,7 +13,8 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
+  en https://vuejs.org/guide/components/async.html
+  ru https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
