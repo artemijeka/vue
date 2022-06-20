@@ -13,7 +13,7 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  en https://vuejs.org/guide/components/async.html
+  en https://vuejs.org/guide/introduction.html
   ru https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
   <!-- practice->frameworks->vue->...doc -->
 
