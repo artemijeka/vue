@@ -1,12 +1,23 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+
+// import HelloWorld from "./components/HelloWorld.vue";
+import SfcExample from "./components/SfcExample.vue";
+import OptionsApi from "./components/OptionsApi.vue";
+import CompositionApi from "./components/CompositionApi.vue";
+import { MyDirective as vMyDirective } from "./components/MyDirective.vue";
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Hello Vue 3 + Vite" />
+    <SfcExample />
+    <OptionsApi />
+    <CompositionApi />
+    <vMyDirective />
+  </div>
 </template>
 
 <style>

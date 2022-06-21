@@ -13,7 +13,8 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  en https://vuejs.org/guide/introduction.html
+  en https://vuejs.org/guide/introduction.html#which-to-choose
+    https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits
   ru https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
   <!-- practice->frameworks->vue->...doc -->
 
