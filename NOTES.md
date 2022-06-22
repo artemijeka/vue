@@ -13,9 +13,17 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  en https://vuejs.org/guide/introduction.html#which-to-choose
-    https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits
-  ru https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
+  en 
+    https://vuejs.org/guide/introduction.html#which-to-choose
+
+  examples
+    https://vuejs.org/examples/#form-bindings
+
+  V tutorial
+    V https://vuejs.org/tutorial/
+
+  ru 
+    https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
   <!-- practice->frameworks->vue->...doc -->
 
 #### Vue.js 3 Fundamentals with the Options API
