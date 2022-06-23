@@ -14,10 +14,10 @@
 
 #### DOCUMENTATION
   en 
-    https://vuejs.org/guide/introduction.html#which-to-choose
+    https://vuejs.org/guide/quick-start.html
 
   examples
-    https://vuejs.org/examples/#form-bindings
+    https://vuejs.org/examples/#grid
 
   V tutorial
     V https://vuejs.org/tutorial/
