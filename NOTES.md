@@ -17,7 +17,7 @@
     https://vuejs.org/guide/quick-start.html
 
   examples
-    https://vuejs.org/examples/#grid
+    https://vuejs.org/examples/#modal
 
   V tutorial
     V https://vuejs.org/tutorial/
