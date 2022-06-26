@@ -17,7 +17,7 @@
     https://vuejs.org/guide/quick-start.html
 
   examples
-    https://vuejs.org/examples/#modal
+    https://vuejs.org/examples/#todomvc
 
   V tutorial
     V https://vuejs.org/tutorial/
