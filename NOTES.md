@@ -17,7 +17,7 @@
     https://vuejs.org/guide/quick-start.html
 
   examples
-    https://vuejs.org/examples/#todomvc
+    https://vuejs.org/examples/#timer
 
   V tutorial
     V https://vuejs.org/tutorial/
