@@ -6,7 +6,7 @@
 import SfcExample from "./components/SfcExample.vue";
 import OptionsApi from "./components/OptionsApi.vue";
 import CompositionApi from "./components/CompositionApi.vue";
-import { MyDirective as vMyDirective } from "./components/MyDirective.vue";
+import MyDirective from "./components/MyDirective.vue";
 </script>
 
 <template>
