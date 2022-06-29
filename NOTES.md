@@ -15,6 +15,7 @@
 #### DOCUMENTATION
   en 
     https://vuejs.org/guide/quick-start.html
+      You should now have your first Vue project running!
 
   V examples
     V https://vuejs.org/examples/#cells
@@ -24,7 +25,10 @@
 
   ru 
     https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
-  <!-- practice->frameworks->vue->...doc -->
+    <!-- practice->frameworks->vue->...doc -->
+
+#### Nuxt.js Fundamentals
+  https://vueschool.io/courses/nuxtjs-fundamentals
 
 #### Vue.js 3 Fundamentals with the Options API
   V https://vueschool.io/courses/vuejs-3-fundamentals
