@@ -14,8 +14,7 @@
 
 #### DOCUMENTATION
   en 
-    https://vuejs.org/guide/quick-start.html
-      You should now have your first Vue project running!
+    https://vuejs.org/guide/quick-start.html#serving-over-http
 
   V examples
     V https://vuejs.org/examples/#cells
