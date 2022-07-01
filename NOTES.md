@@ -14,7 +14,7 @@
 
 #### DOCUMENTATION
   en 
-    https://vuejs.org/guide/quick-start.html#serving-over-http
+    https://vuejs.org/guide/essentials/template-syntax.html#shorthand
 
   V examples
     V https://vuejs.org/examples/#cells
