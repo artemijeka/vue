@@ -14,7 +14,8 @@
 
 #### DOCUMENTATION
   en 
-    https://vuejs.org/guide/essentials/template-syntax.html#shorthand
+    https://vuejs.org/guide/essentials/reactivity-fundamentals.html#declaring-reactive-state
+      options api
 
   V examples
     V https://vuejs.org/examples/#cells
