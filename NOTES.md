@@ -13,9 +13,12 @@
 ------------------------------------------------------------
 
 #### DOCUMENTATION
-  en 
-    https://vuejs.org/guide/essentials/reactivity-fundamentals.html#declaring-reactive-state
-      options api
+  en
+    options api 
+      https://vuejs.org/guide/essentials/computed.html#basic-example
+    composition api
+      https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
+      
 
   V examples
     V https://vuejs.org/examples/#cells
