@@ -15,7 +15,8 @@
 #### DOCUMENTATION
   en
     options api 
-      https://vuejs.org/guide/essentials/computed.html#basic-example
+      https://vuejs.org/guide/essentials/class-and-style.html#with-components
+      
     composition api
       https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
       
