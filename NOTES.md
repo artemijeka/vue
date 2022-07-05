@@ -15,11 +15,12 @@
 #### DOCUMENTATION
   en
     options api 
-      https://vuejs.org/guide/essentials/class-and-style.html#with-components
-      
+      https://vuejs.org/guide/essentials/list.html#v-for-on-template
+
     composition api
       https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
       
+
 
   V examples
     V https://vuejs.org/examples/#cells
