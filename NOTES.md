@@ -15,7 +15,7 @@
 #### DOCUMENTATION
   en
     options api 
-      https://vuejs.org/guide/essentials/list.html#v-for-on-template
+      https://vuejs.org/guide/essentials/event-handling.html
 
     composition api
       https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
