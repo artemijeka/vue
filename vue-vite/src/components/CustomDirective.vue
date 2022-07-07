@@ -1,3 +1,5 @@
+Своя дирректива наподобии v-for например
+
 <script>
 export default {
   data() {
@@ -12,8 +14,6 @@ export default {
 
 <template>
   <div>
-    <h2>MyDirective -></h2>
-    <h2 my-directive>MyDirective</h2>
-    <hr />
+    <h2 custom-directive>CustomDirective</h2>
   </div>
 </template>

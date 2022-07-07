@@ -12,7 +12,6 @@ export default {
   <div>
     <h2>SFC simple example</h2>
     <button @click="count++">Count is: {{ count }}</button>
-    <hr />
   </div>
 </template>
 

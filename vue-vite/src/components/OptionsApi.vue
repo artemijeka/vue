@@ -29,6 +29,5 @@ export default {
   <div>
     <h2>Options API simple example</h2>
     <button @click="increment">Count is: {{ count }}</button>
-    <hr />
   </div>
 </template>

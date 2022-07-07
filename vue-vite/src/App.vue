@@ -1,23 +1,43 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-
+<script>
 // import HelloWorld from "./components/HelloWorld.vue";
 import SfcExample from "./components/SfcExample.vue";
 import OptionsApi from "./components/OptionsApi.vue";
-import CompositionApi from "./components/CompositionApi.vue";
-import MyDirective from "./components/MyDirective.vue";
+// import CompositionApi from "./components/CompositionApi.vue";
+import CustomDirective from "./components/CustomDirective.vue";
+import ClickEvent from "./components/ClickEvent.vue";
+import ScssAndScoped from "./components/ScssAndScoped.vue";
+
+export default {
+  components: {
+    // HelloWorld,
+    SfcExample,
+    OptionsApi,
+    // CompositionApi,
+    CustomDirective,
+    ClickEvent,
+    ScssAndScoped,
+  },
+};
 </script>
 
 <template>
-  <div>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 3 + Vite" />
+  <section>
+    <img class="vue-logo" alt="Vue logo" src="./assets/logo.png" />
+    <!-- <HelloWorld msg="Hello Vue 3 + Vite" /> -->
+    <hr />
     <SfcExample />
+    <hr />
     <OptionsApi />
-    <CompositionApi />
-    <vMyDirective />
-  </div>
+    <hr />
+    <!-- <CompositionApi /> -->
+    <!-- <hr /> -->
+    <CustomDirective />
+    <hr />
+    <ClickEvent />
+    <hr />
+    <ScssAndScoped />
+    <hr />
+  </section>
 </template>
 
 <style>
@@ -29,4 +49,9 @@ import MyDirective from "./components/MyDirective.vue";
   color: #2c3e50;
   margin-top: 60px;
 }
+.vue-logo {
+  width: 50px;
+}
 </style>
+
+<style scoped></style>
