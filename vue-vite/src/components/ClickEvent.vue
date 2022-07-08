@@ -4,12 +4,12 @@ export default {
     return {};
   },
   methods: {
-    message(message, event) {
+    message(message, e) {
       // now we have access to the native event
-      if (event) {
-        event.preventDefault();
+      if (e) {
+        e.preventDefault();
       }
-      alert(message +' '+ event.target.tagName);
+      alert(message + " " + e.target.tagName);
     },
   },
 };
@@ -21,6 +21,10 @@ export default {
     <button @click="message('Событие click сработало!', $event)">Button</button>
 
     <!-- using inline arrow function -->
-    <input @click="(event) => message('Событие click сработало!', event)" type="submit" value="Input">
+    <input
+      @click="(event) => message('Событие click сработало!', event)"
+      type="submit"
+      value="Input"
+    />
   </div>
 </template>
