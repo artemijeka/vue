@@ -3,9 +3,13 @@
 import SfcExample from "./components/SfcExample.vue";
 import OptionsApi from "./components/OptionsApi.vue";
 // import CompositionApi from "./components/CompositionApi.vue";
-import CustomDirective from "./components/CustomDirective.vue";
+import DirectiveCustom from "./components/DirectiveCustom.vue";
 import ClickEvent from "./components/ClickEvent.vue";
 import ScssAndScoped from "./components/ScssAndScoped.vue";
+import Select from "./components/Select.vue";
+import RadioAndCheckbox from "./components/RadioAndCheckbox.vue";
+import CheckboxCustomValue from "./components/CheckboxCustomValue.vue";
+import FormModifiers from "./components/FormModifiers.vue";
 
 export default {
   components: {
@@ -13,9 +17,13 @@ export default {
     SfcExample,
     OptionsApi,
     // CompositionApi,
-    CustomDirective,
+    DirectiveCustom,
     ClickEvent,
     ScssAndScoped,
+    Select,
+    RadioAndCheckbox,
+    CheckboxCustomValue,
+    FormModifiers,
   },
 };
 </script>
@@ -31,11 +39,19 @@ export default {
     <hr />
     <!-- <CompositionApi /> -->
     <!-- <hr /> -->
-    <CustomDirective />
+    <DirectiveCustom />
     <hr />
     <ClickEvent />
     <hr />
     <ScssAndScoped />
+    <hr />
+    <Select />
+    <hr />
+    <RadioAndCheckbox />
+    <hr />
+    <CheckboxCustomValue />
+    <hr />
+    <FormModifiers />
     <hr />
   </section>
 </template>
@@ -51,6 +67,9 @@ export default {
 }
 .vue-logo {
   width: 50px;
+}
+h4 {
+  margin-bottom: 5px;
 }
 </style>
 

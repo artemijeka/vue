@@ -3,9 +3,12 @@ export default {};
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="circle --1"></div>
-    <div class="circle --2"></div>
+  <div>
+    <h2>Scss And Scoped</h2>
+    <div class="wrapper">
+      <div class="circle --1"></div>
+      <div class="circle --2"></div>
+    </div>
   </div>
 </template>
 

@@ -17,6 +17,7 @@ export default {
 
 <template>
   <div>
+    <h2>Click Event</h2>
     <!-- using $event special variable -->
     <button @click="message('Событие click сработало!', $event)">Button</button>
 

@@ -14,6 +14,6 @@ export default {
 
 <template>
   <div>
-    <h2 custom-directive>CustomDirective</h2>
+    <h2 custom-directive>Directive Custom</h2>
   </div>
 </template>

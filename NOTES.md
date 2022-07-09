@@ -15,8 +15,7 @@
 #### DOCUMENTATION
   en
     options api 
-      https://vuejs.org/guide/essentials/forms.html#select
-        Multiple select (bound to array):
+      https://vuejs.org/guide/essentials/forms.html#v-model-with-components
 
     composition api
       https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
