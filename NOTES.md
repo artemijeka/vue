@@ -15,7 +15,7 @@
 #### DOCUMENTATION
   en
     options api 
-      https://vuejs.org/guide/essentials/forms.html#v-model-with-components
+      https://vuejs.org/guide/essentials/watchers.html#callback-flush-timing
 
     composition api
       https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
