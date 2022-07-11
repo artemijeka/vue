@@ -15,7 +15,7 @@
 #### DOCUMENTATION
   en
     options api 
-      https://vuejs.org/guide/essentials/watchers.html#callback-flush-timing
+      https://vuejs.org/guide/essentials/component-basics.html#passing-props
 
     composition api
       https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
