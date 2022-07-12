@@ -14,12 +14,14 @@
 
 #### DOCUMENTATION
   en
-    options api 
-      https://vuejs.org/guide/essentials/component-basics.html#passing-props
+    options api
+      основы прочёл! (Essentials)
+      далее рекомендуют что-то сделать своё на vue, поиграться, (~применяя документацию по основам)
+        https://vuejs.org/guide/components/registration.html#component-registration
 
     composition api
       https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
-      
+
 
 
   V examples
