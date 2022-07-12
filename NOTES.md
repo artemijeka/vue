@@ -15,9 +15,13 @@
 #### DOCUMENTATION
   en
     options api
-      основы прочёл! (Essentials)
-      далее рекомендуют что-то сделать своё на vue, поиграться, (~применяя документацию по основам)
-        https://vuejs.org/guide/components/registration.html#component-registration
+      основы прочёл (Essentials)!
+      далее рекомендуют что-то сделать своё на vue, поиграться, (~применяя документацию по основам)!
+      значит далее перехожу к основам nuxtjs!
+      и делаю на основах этих технологий сайт родителям!
+        после перехожу к глубоким познаниям в vue
+          https://vuejs.org/guide/components/registration.html#component-registration
+        и глубоким познаниям в nuxtjs
 
     composition api
       https://vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes
