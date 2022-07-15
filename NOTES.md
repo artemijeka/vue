@@ -38,9 +38,6 @@
     https://v3.ru.vuejs.org/ru/guide/composition-api-template-refs.html#использование-с-jsx
     <!-- practice->frameworks->vue->...doc -->
 
-#### Nuxt.js Fundamentals
-  https://vueschool.io/courses/nuxtjs-fundamentals
-
 #### Vue.js 3 Fundamentals with the Options API
   V https://vueschool.io/courses/vuejs-3-fundamentals
 
