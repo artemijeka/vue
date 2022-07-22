@@ -1,4 +1,4 @@
-#### CDSs
+#### CDNs
   https://cdnjs.com/libraries/vue
   https://cdn.jsdelivr.net/npm/vue@next/dist/
   https://unpkg.com/browse/vue@3.2.37/
@@ -30,7 +30,8 @@
   V tutorial
     V https://vuejs.org/tutorial/
 
-
+#### Real World Vue 3
+  https://www.vuemastery.com/courses/real-world-vue3/single-file-components/
 
 #### Vuex
   vueschool
