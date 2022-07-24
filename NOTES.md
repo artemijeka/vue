@@ -34,7 +34,7 @@
   V https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3/
 
 ## ...Real World Vue 3
-  ...https://www.vuemastery.com/courses/real-world-vue3/single-file-components/
+  ...https://www.vuemastery.com/courses/real-world-vue3/dynamic-routing
 
 ## Vuex
   vueschool
