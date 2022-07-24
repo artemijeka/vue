@@ -62,7 +62,6 @@ export default {
       //   .get("https://my-json-server.typicode.com/artemijeka/real-world-vue-3-db/events")
       .then((response) => {
         this.events = response.data;
-        // console.log("events: ", response.data);
       })
       .catch((error) => {
         console.log(error);

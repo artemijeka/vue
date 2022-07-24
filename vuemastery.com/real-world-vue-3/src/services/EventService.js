@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const apiClient = axios.create({
   baseURL: 'https://my-json-server.typicode.com/artemijeka/real-world-vue-3-db',
@@ -7,10 +7,13 @@ const apiClient = axios.create({
     Accept: 'application/json',
     'Content-Type': 'application/json'
   }
-})
+});
 
 export default {
   getEvents() {
     return apiClient.get('/events')
+  },
+  getEvent(id) {
+    return apiClient.get('/events/'+id)
   }
 }
