@@ -1,13 +1,23 @@
 import { createStore } from 'vuex'
 
 export default createStore({
-  state: {
+  state: {//=data in vue
+    products: []
   },
-  getters: {
+  getters: {//=computed in vue
+    productsCount() {
+
+    }
   },
   mutations: {
+    setProducts(state, products) {
+      state.products = products
+    }
   },
-  actions: {
+  actions: {//=methods in vue
+    fetchProducts() {
+
+    }
   },
   modules: {
   }
