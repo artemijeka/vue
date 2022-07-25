@@ -45,7 +45,7 @@ DOCUMENTATION
 ...Vuex
   ...Vuex for Everyone
     ...https://vueschool.io/courses/vuex-for-everyone
-      ...https://vueschool.io/lessons/vuex-getters
+      ...https://vueschool.io/lessons/vuex-actions
     
   docs
     https://vuex.vuejs.org/

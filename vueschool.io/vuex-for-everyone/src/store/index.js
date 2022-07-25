@@ -5,8 +5,8 @@ export default createStore({
     products: []
   },
   getters: {//=computed in vue
-    productsCount() {
-
+    availabeProducts(state) {//, getters
+      return state.products.filter(product=>product.inventory>0)
     }
   },
   mutations: {
