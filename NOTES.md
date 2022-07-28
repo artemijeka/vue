@@ -44,8 +44,7 @@ DOCUMENTATION
 
 ...Vuex
   ...Vuex for Everyone
-    ...https://vueschool.io/courses/vuex-for-everyone
-      ...https://vueschool.io/lessons/vuex-actions
+    ...https://vueschool.io/lessons/vuex-mutations
     
   docs
     https://vuex.vuejs.org/

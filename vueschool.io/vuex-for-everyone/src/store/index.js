@@ -9,14 +9,14 @@ export default createStore({
       return state.products.filter(product=>product.inventory>0)
     }
   },
-  mutations: {
-    setProducts(state, products) {
-      state.products = products
-    }
-  },
   actions: {//=methods in vue
     fetchProducts() {
 
+    }
+  },
+  mutations: {
+    setProducts(state, products) {
+      state.products = products
     }
   },
   modules: {
