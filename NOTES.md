@@ -6,12 +6,6 @@ CDNs
 Установка и системы сборки
   1.install-and-builders/NOTES.md
 
-Мини версия vue 
-  Если требуется просто улучшить статичный HTML лёгкими взаимодействиями, то обратите также внимание на 
-    petite-vue, 
-      https://github.com/vuejs/petite-vue
-    подмножество Vue, размером 6 КБайт, оптимизированное для прогрессивного улучшения.
-
 
 
 ----------------------------------------------------------------------
@@ -42,9 +36,10 @@ DOCUMENTATION
 
 ----------------------------------------------------------------------
 
-...Vuex
-  ...Vuex for Everyone
-    ...https://vueschool.io/lessons/vuex-mutations
+Vuex
+  vueschool.io
+    ...Vuex for Everyone
+      ...https://vueschool.io/lessons/vuex-mutations
     
   docs
     https://vuex.vuejs.org/
@@ -82,3 +77,13 @@ Vue Router for Everyone (СТАРАЯ ВЕРСИЯ ПОХОЖЕ)
 
 Application Monitoring in Vue.js with Sentry
   ? https://vueschool.io/lessons/create-a-sentry-project
+
+
+
+----------------------------------------------------------------------
+
+Мини версия vue 
+  Если требуется просто улучшить статичный HTML лёгкими взаимодействиями, то обратите также внимание на 
+    petite-vue, 
+      https://github.com/vuejs/petite-vue
+    подмножество Vue, размером 6 КБайт, оптимизированное для прогрессивного улучшения.
