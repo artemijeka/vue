@@ -7,7 +7,9 @@ import './registerServiceWorker'
 
 import router from './router'
 
-import './assets/main.scss'
+// import 'materialize-css/dist/css/materialize.min.css'
+// import './assets/main.scss'
+// import 'materialize-css/dist/js/materialize.min.js'
 
 const app = createApp(App)
 

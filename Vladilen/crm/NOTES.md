@@ -1,5 +1,5 @@
 Остановился
-  https://www.youtube.com/watch?v=Pm2aASoksJU
+  https://www.youtube.com/watch?v=YtEIore1kVc
 
 Дополнительно установил
   npm i register-service-worker
