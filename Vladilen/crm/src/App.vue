@@ -12,11 +12,27 @@ export default {
       // console.log(this.$route.meta.layout)
       // Здесь он сделал по другому https://youtu.be/Pm2aASoksJU?t=1460
       return this.$route.meta.layout
-    }
+    },
+    // date() {
+    //   const dateObj = new Date();
+    //   const year = dateObj.getUTCFullYear();
+    //   const month = dateObj.getUTCMonth() + 1; //months from 1-12
+    //   const day = dateObj.getUTCDate();
+
+    //   return day + "." + month + "." + year;
+    //   // return year + "." + month + "." + day;
+    // }
   },
   components: {
     EmptyLayout,
     MainLayout
+  },
+  provide() {
+    return {
+      // date: this.date
+    }
+  },
+  mounted() {
   }
 }
 </script>

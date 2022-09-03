@@ -1,72 +1,42 @@
+<script>
+import NavBar from "@/components/NavBar.vue";
+import SideNav from "@/components/SideNav.vue";
+
+export default {
+  name: "main-layout",
+  data() {
+    return {
+      sidenavIsOpen: true,
+    };
+  },
+  components: {
+    NavBar,
+    SideNav,
+  },
+};
+</script>
+
 <template>
   <div>
     <div class="app-main-layout">
-      <nav class="navbar orange lighten-1">
-        <div class="nav-wrapper">
-          <div class="navbar-left">
-            <a href="#">
-              <i class="material-icons black-text">dehaze</i>
-            </a>
-            <span class="black-text">12.12.12</span>
-          </div>
+      <NavBar @sidenav-toggle="sidenavIsOpen = !sidenavIsOpen" />
 
-          <ul class="right hide-on-small-and-down">
-            <li>
-              <a class="dropdown-trigger black-text" href="#" data-target="dropdown">
-                USER NAME
-                <i class="material-icons right">arrow_drop_down</i>
-              </a>
+      <SideNav :sidenavIsOpen="sidenavIsOpen" />
 
-              <ul id='dropdown' class='dropdown-content'>
-                <li>
-                  <a href="#" class="black-text">
-                    <i class="material-icons">account_circle</i>Профиль
-                  </a>
-                </li>
-                <li class="divider" tabindex="-1"></li>
-                <li>
-                  <a href="#" class="black-text">
-                    <i class="material-icons">assignment_return</i>Выйти
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <ul class="sidenav app-sidenav open">
-        <li>
-          <a href="#" class="waves-effect waves-orange pointer">Счет</a>
-        </li>
-        <li>
-          <a href="#" class="waves-effect waves-orange pointer">История</a>
-        </li>
-        <li>
-          <a href="#" class="waves-effect waves-orange pointer">Планирование</a>
-        </li>
-        <li>
-          <a href="#" class="waves-effect waves-orange pointer">Новая запись</a>
-        </li>
-        <li>
-          <a href="#" class="waves-effect waves-orange pointer">Категории</a>
-        </li>
-      </ul>
-
-      <main class="app-content">
+      <main class="app-content" :class="{ full: !sidenavIsOpen }">
         <div class="app-page">
-
-          <router-view />
-
+          <RouterView />
         </div>
       </main>
 
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large blue" href="#">
+        <RouterLink class="btn-floating btn-large blue" to="/record">
           <i class="large material-icons">add</i>
-        </a>
+        </RouterLink>
+        <!-- <a class="btn-floating btn-large blue" href="#">
+          <i class="large material-icons">add</i>
+        </a> -->
       </div>
     </div>
   </div>
-
 </template>
