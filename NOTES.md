@@ -51,6 +51,9 @@ Vuex
 Pinia
   https://pinia.vuejs.org/introduction.html
 
+...Vue CRM by Vladilen
+  /Vladilen/crm
+
 +Vue.js 3 Fundamentals with the Options API
   +https://vueschool.io/courses/vuejs-3-fundamentals
 

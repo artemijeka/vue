@@ -1,2 +1,2 @@
 Остановился
-https://youtu.be/nldxXSjpX0I?t=133
+  https://www.youtube.com/watch?v=nldxXSjpX0I
