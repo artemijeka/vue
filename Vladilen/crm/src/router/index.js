@@ -7,7 +7,7 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       meta: {
-        layout: 'empty'
+        layout: 'empty-layout'
       },
       component: ()=>import('../views/Login.vue')
     },
@@ -15,7 +15,7 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       meta: {
-        layout: 'empty'
+        layout: 'empty-layout'
       },
       component: ()=>import('../views/Register.vue')
     },
@@ -23,7 +23,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       meta: {
-        layout: 'main'
+        layout: 'main-layout'
       },
       component: ()=>import('../views/Home.vue')
     },
@@ -31,7 +31,7 @@ const router = createRouter({
       path: '/categories',
       name: 'categories',
       meta: {
-        layout: 'main'
+        layout: 'main-layout'
       },
       component: ()=>import('../views/Categories.vue')
     },
@@ -39,7 +39,7 @@ const router = createRouter({
       path: '/detail',
       name: 'detail',
       meta: {
-        layout: 'main'
+        layout: 'main-layout'
       },
       component: ()=>import('../views/Detail.vue')
     },
@@ -47,7 +47,7 @@ const router = createRouter({
       path: '/history',
       name: 'history',
       meta: {
-        layout: 'main'
+        layout: 'main-layout'
       },
       component: ()=>import('../views/History.vue')
     },
@@ -55,7 +55,7 @@ const router = createRouter({
       path: '/planning',
       name: 'planning',
       meta: {
-        layout: 'main'
+        layout: 'main-layout'
       },
       component: ()=>import('../views/Planning.vue')
     },
@@ -63,7 +63,7 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       meta: {
-        layout: 'main'
+        layout: 'main-layout'
       },
       component: ()=>import('../views/Profile.vue')
     },
@@ -71,7 +71,7 @@ const router = createRouter({
       path: '/record',
       name: 'record',
       meta: {
-        layout: 'main'
+        layout: 'main-layout'
       },
       component: ()=>import('../views/Record.vue')
     },

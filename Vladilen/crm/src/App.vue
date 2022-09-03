@@ -9,7 +9,7 @@ import MainLayout from '@/layouts/Main.vue'
 export default {
   computed: {
     layout() {
-      console.log(this.$route.meta.layout)
+      // console.log(this.$route.meta.layout)
       // Здесь он сделал по другому https://youtu.be/Pm2aASoksJU?t=1460
       return this.$route.meta.layout
     }
@@ -24,9 +24,7 @@ export default {
 
 
 <template>
-  <component :is="layout">
-    <router-view />
-  </component>
+  <component :is="layout" />
 </template>
 
 
