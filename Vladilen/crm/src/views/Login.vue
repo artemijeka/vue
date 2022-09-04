@@ -1,21 +1,121 @@
+<script>
+import useVuelidate from "@vuelidate/core";
+import { required, email, minLength } from "@vuelidate/validators";
+
+export default {
+  name: "login-view",
+  setup() {
+    return { v$: useVuelidate() };
+  },
+  data: () => ({
+    email: "",
+    password: "",
+  }),
+  methods: {
+    login() {
+      if (this.v$.$invalid) {
+        this.v$.$touch();
+        return;
+      } else {
+        let formData = {
+          email: this.email,
+          password: this.password,
+        };
+        console.log(formData);
+        this.$router.push("/");
+      }
+    },
+  },
+  validations() {
+    return {
+      email: { email, required, $autoDirty: true },
+      password: { required, minLength: minLength(8), $autoDirty: true },
+    };
+  },
+  mounted() {
+    if (this.$messages[this.$route.query.message]) {
+      this.$showMessage(this.$messages[this.$route.query.message], {
+        classes: "rounded",
+        inDuration: 1000,
+        outDuration: 250,
+        completeCallback: null,
+        activationPercent: 0.9, //90%
+      });
+    }
+  },
+  computed: {
+    emailInvalid() {
+      return this.v$.email.email.$invalid && this.v$.email.$dirty;
+    },
+    emailValid() {
+      return !this.v$.email.email.$invalid && this.v$.email.$dirty;
+    },
+    emailEmpty() {
+      return this.v$.email.required.$invalid && this.v$.email.$dirty;
+    },
+    passShort() {
+      return this.v$.password.minLength.$invalid;
+    },
+    passEmpty() {
+      return this.v$.password.required.$invalid && this.v$.password.$dirty;
+    },
+  },
+};
+</script>
+
 <template>
   <form class="card auth-card" @submit.prevent="login">
     <div class="card-content">
       <span class="card-title">Домашняя бухгалтерия</span>
       <div class="input-field">
+        <!-- 
+          Этот класс убрали чтобы валидацию не делал Materialize
+          class="validate"
+         -->
+        <!-- 
+          v-model:"v$.email.$model" - записан так чтобы срабатывал считыватель ввода в поле ($dirty)
+          -->
         <input
           id="email"
           type="text"
-          class="validate"
-          v-model.trim="email" 
-          :class="{invalid: $v.email.$dirty && !$v.email.required} || {invalid: $v.email.$dirty && !$v.email.email}"/>
+          v-model.trim="email"
+          :class="{
+            invalid: emailInvalid || emailEmpty,
+            valid: emailValid && !emailEmpty,
+          }"
+        />
         <label for="email">Email</label>
-        <small class="helper-text invalid">Email</small>
+        <small class="helper-text invalid" v-if="emailEmpty">
+          {{ "Email обязателен!" }}
+        </small>
+        <small class="helper-text invalid" v-else-if="emailInvalid">
+          {{ "Email некорректен!" }}
+        </small>
       </div>
+
       <div class="input-field">
-        <input id="password" type="password" class="validate" />
+        <!-- 
+          Этот класс убрали чтобы валидацию не делал Materialize
+          class="validate"
+         -->
+        <input
+          id="password"
+          type="password"
+          v-model="password"
+          :class="{
+            invalid: passShort || passEmpty,
+            valid: !passShort && !passEmpty,
+          }"
+        />
         <label for="password">Пароль</label>
-        <small class="helper-text invalid">Password</small>
+        <small class="helper-text invalid" v-if="passEmpty">
+          {{ "Password обязателен!" }}
+        </small>
+        <small class="helper-text invalid" v-else-if="passShort">
+          {{
+            `Password короче ${this.v$.password.minLength.$params.min} символов!`
+          }}
+        </small>
       </div>
     </div>
     <div class="card-action">
@@ -33,31 +133,3 @@
     </div>
   </form>
 </template>
-
-<script>
-import useVuelidate from '@vuelidate/core'
-import { required, email, minLength } from '@vuelidate/validators'
-
-export default {
-  name: "login-view",
-  setup () {
-    return { v$: useVuelidate() }
-  },
-  data: () => ({
-    email: "",
-    password: "",
-  }),
-  methods: {
-    login() {
-      if (this.$v.$invalid) {
-        this.$v.$touch()
-      }
-      this.$router.push("/")
-    },
-  },
-  validations: {
-    email: {email, required},
-    password: {required, minLength: minLength(6)},
-  },
-};
-</script>
