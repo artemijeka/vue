@@ -1,14 +1,19 @@
 <template>
-  <form class="card auth-card">
+  <form class="card auth-card" @submit.prevent="login">
     <div class="card-content">
       <span class="card-title">Домашняя бухгалтерия</span>
       <div class="input-field">
-        <input id="email" type="text" class="validate">
+        <input
+          id="email"
+          type="text"
+          class="validate"
+          v-model.trim="email" 
+          :class="{invalid: $v.email.$dirty && !$v.email.required} || {invalid: $v.email.$dirty && !$v.email.email}"/>
         <label for="email">Email</label>
         <small class="helper-text invalid">Email</small>
       </div>
       <div class="input-field">
-        <input id="password" type="password" class="validate">
+        <input id="password" type="password" class="validate" />
         <label for="password">Пароль</label>
         <small class="helper-text invalid">Password</small>
       </div>
@@ -23,8 +28,36 @@
 
       <p class="center">
         Нет аккаунта?
-        <a href="/">Зарегистрироваться</a>
+        <RouterLink to="/register">Зарегистрироваться</RouterLink>
       </p>
     </div>
   </form>
 </template>
+
+<script>
+import useVuelidate from '@vuelidate/core'
+import { required, email, minLength } from '@vuelidate/validators'
+
+export default {
+  name: "login-view",
+  setup () {
+    return { v$: useVuelidate() }
+  },
+  data: () => ({
+    email: "",
+    password: "",
+  }),
+  methods: {
+    login() {
+      if (this.$v.$invalid) {
+        this.$v.$touch()
+      }
+      this.$router.push("/")
+    },
+  },
+  validations: {
+    email: {email, required},
+    password: {required, minLength: minLength(6)},
+  },
+};
+</script>
