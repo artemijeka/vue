@@ -97,6 +97,7 @@
 <script>
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
+import { useAuthStore } from "@/stores/auth";
 
 export default {
   name: "register-view",
@@ -108,9 +109,10 @@ export default {
     password: "",
     name: "",
     agree: false,
+    auth: useAuthStore(),
   }),
   methods: {
-    register() {
+    async register() {
       if (this.v$.$invalid) {
         this.v$.$touch();
         return;
@@ -119,10 +121,15 @@ export default {
           email: this.email,
           password: this.password,
           name: this.name,
-          agree: this.agree
+          agree: this.agree,
         };
         console.log(formData);
-        this.$router.push("/");
+        try {
+          await this.auth.register(formData);
+          this.$router.push("/");
+        } catch (error) {
+          console.error(error);
+        }
       }
     },
   },
