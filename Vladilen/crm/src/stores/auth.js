@@ -55,7 +55,7 @@ export const useAuthStore = defineStore({
           const user = userCredential.user;
           console.log('user')
           console.log(user)//впринципе можно здесь сделать get id вместо action getUId
-          this.writeUserData(userId, email, password, name)
+          this.writeUserData(email, password, name)
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -65,17 +65,17 @@ export const useAuthStore = defineStore({
           throw error
         });
     },
-    getUId() {
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-          return user.uid
-        } else {
-          return null
-        }
-      });
-    },
+    // getUId() {
+    //   onAuthStateChanged(auth, (user) => {
+    //     if (user) {
+    //       // User is signed in, see docs for a list of available properties
+    //       // https://firebase.google.com/docs/reference/js/firebase.User
+    //       return user.uid
+    //     } else {
+    //       return null
+    //     }
+    //   });
+    // },
     writeUserData(userId, email, password, name) {
       const db = getDatabase(firebaseApp);
       console.log('db')
