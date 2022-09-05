@@ -12,8 +12,9 @@
 
 Firebase
   Docs:
+    https://firebase.google.com/docs/web/setup?authuser=0&hl=en
     https://firebase.google.com/docs/auth/web/start?authuser=0
-    https://firebase.google.com/docs/reference/js/auth.md?authuser=0&hl=en#signout
+    https://firebase.google.com/docs/reference/js?hl=en&authuser=0
 
   You can deploy now or [later](https://firebase.google.com/docs/hosting/quickstart?authuser=0&hl=en). To deploy now, open a terminal window, then navigate to or create a root directory for your web app.
 
