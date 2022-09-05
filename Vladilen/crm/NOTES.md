@@ -1,5 +1,5 @@
 Остановился
-  https://youtu.be/CTLonYohENw?t=670
+  https://www.youtube.com/watch?v=yE4VxlZhdFk
 
 Дополнительно установил
   npm i register-service-worker
@@ -11,6 +11,10 @@
   https://habr.com/ru/company/otus/blog/571272/
 
 Firebase
+  Docs:
+    https://firebase.google.com/docs/auth/web/start?authuser=0
+    https://firebase.google.com/docs/reference/js/auth.md?authuser=0&hl=en#signout
+
   You can deploy now or [later](https://firebase.google.com/docs/hosting/quickstart?authuser=0&hl=en). To deploy now, open a terminal window, then navigate to or create a root directory for your web app.
 
   Sign in to Google

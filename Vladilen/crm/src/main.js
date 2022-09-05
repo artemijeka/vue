@@ -14,6 +14,7 @@ import globals from '@/globals'
 
 
 
+// TODO наверно надо убрать дублирование фаербэйс здесь и в сторе auth
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -32,7 +33,7 @@ const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
-console.log(auth)
+// console.log(auth)
 
 let vueApp = null
 

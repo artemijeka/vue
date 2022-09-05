@@ -2,6 +2,8 @@
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
 
+import { useAuthStore } from "@/stores/auth";
+
 export default {
   name: "login-view",
   setup() {
@@ -10,26 +12,37 @@ export default {
   data: () => ({
     email: "",
     password: "",
+    auth: useAuthStore(),
   }),
   methods: {
-    login() {
+    async login() {
       if (this.v$.$invalid) {
         this.v$.$touch();
         return;
       } else {
+        
         let formData = {
           email: this.email,
           password: this.password,
         };
-        console.log(formData);
-        this.$router.push("/");
+        // console.log(formData);
+
+        try {
+          // console.log("this.auth");
+          // console.log(this.auth);
+          await this.auth.login(formData);
+          this.$router.push("/");
+        } catch (error) {
+          console.error(error);
+        }
+
       }
     },
   },
   validations() {
     return {
       email: { email, required, $autoDirty: true },
-      password: { required, minLength: minLength(8), $autoDirty: true },
+      password: { required, minLength: minLength(6), $autoDirty: true },
     };
   },
   mounted() {
