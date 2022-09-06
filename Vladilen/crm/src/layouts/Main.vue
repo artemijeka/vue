@@ -2,16 +2,26 @@
 import NavBar from "@/components/NavBar.vue";
 import SideNav from "@/components/SideNav.vue";
 
+import { useInfoStore } from "@/stores/info";
+
 export default {
   name: "main-layout",
   data() {
     return {
       sidenavIsOpen: true,
+      info: useInfoStore(),
     };
   },
   components: {
     NavBar,
     SideNav,
+  },
+  async mounted() {
+    // console.log(Object.keys(this.info.$state.info).length)
+    if (!Object.keys(this.info.$state.info).length) {
+      let fetchInfo = await this.info.fetchInfo()
+      console.log(fetchInfo)
+    }
   },
 };
 </script>
