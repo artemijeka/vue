@@ -14,15 +14,24 @@ const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
+const db = getDatabase(firebaseApp);
 
 export const useAuthStore = defineStore({
   id: 'auth',
   state: () => ({
-    auth: null
+    auth: null,
+    error: null,
   }),
   getters: {
+    error: (s) => (s.error)
   },
   actions: {
+    setError(state, error) {//mutation
+      state.error = error
+    },
+    clearError(state) {//mutation
+      state.error = null
+    },
     async login({ email, password }) {
       // try {
       await signInWithEmailAndPassword(auth, email, password)
@@ -32,10 +41,11 @@ export const useAuthStore = defineStore({
           console.log(user)
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.error(errorCode)
-          console.error(errorMessage)
+          console.log('this.setError(error)')
+          this.setError(error)
+
+          console.error(error.code)
+          console.error(error.message)
           throw error
         });
       // } catch (error) {
@@ -49,41 +59,30 @@ export const useAuthStore = defineStore({
     async logout() {
       await signOut(auth)
     },
-    async register() {
-      await createUserWithEmailAndPassword(auth, email, password, name)
+    async register({ email, password, name, agreeRules }) {
+      await createUserWithEmailAndPassword(auth, email, password, name, agreeRules)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log('user')
-          console.log(user)//впринципе можно здесь сделать get id вместо action getUId
-          this.writeUserData(email, password, name)
+          console.log('user.uid')
+          console.log(user.uid)
+          this.writeUserData(user.uid, email, password, name, agreeRules)
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.error(errorCode)
-          console.error(errorMessage)
+          this.setError(error)
+
+          console.error(error.code)
+          console.error(error.message)
           throw error
         });
     },
-    // getUId() {
-    //   onAuthStateChanged(auth, (user) => {
-    //     if (user) {
-    //       // User is signed in, see docs for a list of available properties
-    //       // https://firebase.google.com/docs/reference/js/firebase.User
-    //       return user.uid
-    //     } else {
-    //       return null
-    //     }
-    //   });
-    // },
-    writeUserData(userId, email, password, name) {
-      const db = getDatabase(firebaseApp);
+    writeUserData(userId, email, password, name, agreeRules) {
       console.log('db')
       console.log(db)
       set(ref(db, 'users/' + userId), {
-        email: email,
-        password: password,
-        name : name
+        email,
+        password,
+        name,
+        agreeRules
       });
     }
   }

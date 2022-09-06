@@ -73,7 +73,7 @@
       </div>
       <p>
         <label>
-          <input type="checkbox" v-model="agree" />
+          <input type="checkbox" v-model="agreeRules" />
           <span>С правилами согласен</span>
         </label>
       </p>
@@ -108,7 +108,7 @@ export default {
     email: "",
     password: "",
     name: "",
-    agree: false,
+    agreeRules: false,
     auth: useAuthStore(),
   }),
   methods: {
@@ -121,7 +121,7 @@ export default {
           email: this.email,
           password: this.password,
           name: this.name,
-          agree: this.agree,
+          agreeRules: this.agreeRules,
         };
         console.log(formData);
         try {
@@ -136,9 +136,9 @@ export default {
   validations() {
     return {
       email: { email, required, $autoDirty: true },
-      password: { required, minLength: minLength(8), $autoDirty: true },
+      password: { required, minLength: minLength(6), $autoDirty: true },
       name: { required },
-      agree: { checked: (v) => v },
+      agreeRules: { checked: (v) => v },
     };
   },
   computed: {
