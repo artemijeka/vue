@@ -33,8 +33,8 @@ export default {
           await this.auth.login(formData);
           this.$router.push("/");
         } catch (error) {
-          console.error(error);
-          throw error
+          // console.error(error);
+          // throw error
         }
 
       }

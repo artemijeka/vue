@@ -36,15 +36,15 @@ export default {
         .logout()
         .then((logoutThen) => {
           // Log out
-          console.log('logoutThen');
-          console.log(logoutThen);
+          // console.log('logoutThen');
+          // console.log(logoutThen);
           this.$router.push("/login?message=logout");
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.error(errorCode);
-          console.error(errorMessage);
+          // const errorCode = error.code;
+          // const errorMessage = error.message;
+          // console.error(errorCode);
+          // console.error(errorMessage);
           throw error;
         });
     },

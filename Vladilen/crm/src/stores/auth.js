@@ -23,13 +23,13 @@ export const useAuthStore = defineStore({
     error: null,
   }),
   getters: {
-    error: (s) => (s.error)
+    error: (state) => (state.error)
   },
   actions: {
-    setError(state, error) {//mutation
-      state.error = error
+    setError(error) {
+      this.$state.error = error
     },
-    clearError(state) {//mutation
+    clearError(state) {
       state.error = null
     },
     async login({ email, password }) {
@@ -41,11 +41,9 @@ export const useAuthStore = defineStore({
           console.log(user)
         })
         .catch((error) => {
-          console.log('this.setError(error)')
-          this.setError(error)
-
-          console.error(error.code)
-          console.error(error.message)
+          this.setError(error.code)
+          // console.error(error.code)
+          // console.error(error.message)
           throw error
         });
       // } catch (error) {
@@ -63,21 +61,20 @@ export const useAuthStore = defineStore({
       await createUserWithEmailAndPassword(auth, email, password, name, agreeRules)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log('user.uid')
-          console.log(user.uid)
+          // console.log('user.uid')
+          // console.log(user.uid)
           this.writeUserData(user.uid, email, password, name, agreeRules)
         })
         .catch((error) => {
-          this.setError(error)
-
-          console.error(error.code)
-          console.error(error.message)
+          this.setError(error.code)
+          // console.error(error.code)
+          // console.error(error.message)
           throw error
         });
     },
     writeUserData(userId, email, password, name, agreeRules) {
-      console.log('db')
-      console.log(db)
+      // console.log('db')
+      // console.log(db)
       set(ref(db, 'users/' + userId), {
         email,
         password,

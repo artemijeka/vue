@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from './router'
 
 import showMessage from '@/helpers/show-message'
-import globals from '@/globals'
+import messages from '@/helpers/messages'
 
 // import 'materialize-css/dist/css/materialize.min.css'
 // import './assets/main.scss'
@@ -46,7 +46,7 @@ let vueApp = null
     vueApp.use(createPinia())
     vueApp.use(router)
     vueApp.use(showMessage)
-    vueApp.use(globals)
+    vueApp.use(messages)
 
     vueApp.mount('#app')
 //   }

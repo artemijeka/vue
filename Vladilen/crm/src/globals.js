@@ -14,8 +14,7 @@
 
 export default {
   install(app, options) {
-    app.config.globalProperties.$messages = {
-      logout: 'Вы вышли из приложения!'
+    app.config.globalProperties.$testttttt = {
     }
   }
 }

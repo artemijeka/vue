@@ -128,7 +128,8 @@ export default {
           await this.auth.register(formData);
           this.$router.push("/");
         } catch (error) {
-          console.error(error);
+          // console.error(error);
+          // throw error
         }
       }
     },

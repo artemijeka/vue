@@ -16,19 +16,17 @@ export default {
   },
   computed: {
     error() {
-      console.log("this.auth.getters");
-      console.log(this.auth.getters);
+      // console.log("this.auth.$state.error");
+      // console.log(this.auth.$state.error);
 
-      // this.auth.$patch((s) => {
-      //   console.log("s");
-      //   console.log(s);
-      // });
-      return this.auth.error;
+      return this.auth.$state.error;
     },
   },
   watch: {
     error(fbError) {
+      // console.log("fbError");
       // console.log(fbError);
+      this.$showError(this.$messages[fbError] || this.$messages['default'])
     },
   },
 };
