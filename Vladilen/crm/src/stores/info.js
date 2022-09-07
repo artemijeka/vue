@@ -8,11 +8,12 @@ export const useInfoStore = defineStore({
     auth: useAuthStore()
   }),
   actions: {
-    async fetchInfo() {
-      let test = await this.auth.getUserId()
-      console.log('test')
-      console.log(test)
-      return 'fetchInfo test return'
+    fetchInfo() {
+      this.auth.getUserId().then((test) => {
+        console.log('test')
+        console.log(test)
+        return test
+      })
     }
   },
   getters: {

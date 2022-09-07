@@ -83,14 +83,14 @@ export const useAuthStore = defineStore({
         agreeRules
       });
     },
-    getUserId() {
-      onAuthStateChanged(auth, (user) => {
+    async getUserId() {
+      await onAuthStateChanged(auth, (user) => {
         if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
           console.log('user.uid')
           console.log(user.uid)
-          return user.uid;
+          return user.uid
         } else {
           // User is signed out
         }
