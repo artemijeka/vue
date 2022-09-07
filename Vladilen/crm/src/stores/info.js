@@ -1,13 +1,18 @@
 import { defineStore } from 'pinia'
+import { useAuthStore } from './auth'
 
 export const useInfoStore = defineStore({
   id: 'info',
   state: () => ({
-    info: {}
+    info: {},
+    auth: useAuthStore()
   }),
   actions: {
     async fetchInfo() {
-      // await 
+      let test = await this.auth.getUserId()
+      console.log('test')
+      console.log(test)
+      return 'fetchInfo test return'
     }
   },
   getters: {

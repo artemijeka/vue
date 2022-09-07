@@ -20,6 +20,7 @@ export default {
     // console.log(Object.keys(this.info.$state.info).length)
     if (!Object.keys(this.info.$state.info).length) {
       let fetchInfo = await this.info.fetchInfo()
+      console.log('fetchInfo')
       console.log(fetchInfo)
     }
   },

@@ -1,3 +1,6 @@
+Владилен делал на vue 2 + vuex
+  я переписываю на vue3 + pinia
+
 Остановился
   https://youtu.be/Jimf6cunaY4?t=324
 

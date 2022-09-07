@@ -14,12 +14,15 @@ const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
+
 const db = getDatabase(firebaseApp);
+console.log('db')
+console.log(db)
 
 export const useAuthStore = defineStore({
   id: 'auth',
   state: () => ({
-    auth: null,
+    // auth: null,
     error: null,
   }),
   getters: {
@@ -61,8 +64,6 @@ export const useAuthStore = defineStore({
       await createUserWithEmailAndPassword(auth, email, password, name, agreeRules)
         .then((userCredential) => {
           const user = userCredential.user;
-          // console.log('user.uid')
-          // console.log(user.uid)
           this.writeUserData(user.uid, email, password, name, agreeRules)
         })
         .catch((error) => {
@@ -80,6 +81,19 @@ export const useAuthStore = defineStore({
         password,
         name,
         agreeRules
+      });
+    },
+    getUserId() {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          console.log('user.uid')
+          console.log(user.uid)
+          return user.uid;
+        } else {
+          // User is signed out
+        }
       });
     }
   }
