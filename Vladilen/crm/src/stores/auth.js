@@ -3,6 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
 import { getAuth, signOut, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
+import { useInfoStore } from '@/stores/info'
+
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyCmZb9pg68mI12DEX0PvfTwug1lU84DbWI",
   authDomain: "crm-vue-vladilen.firebaseapp.com",
@@ -13,16 +15,17 @@ const firebaseApp = initializeApp({
   databaseURL: "https://crm-vue-vladilen-default-rtdb.asia-southeast1.firebasedatabase.app"
 });
 
-const auth = getAuth(firebaseApp);
+export const auth = getAuth(firebaseApp);
 
-const db = getDatabase(firebaseApp);
-console.log('db')
-console.log(db)
+export const db = getDatabase(firebaseApp);
+// console.log('db')
+// console.log(db)
 
 export const useAuthStore = defineStore({
   id: 'auth',
   state: () => ({
     // auth: null,
+    info: useInfoStore(),
     error: null,
   }),
   getters: {
@@ -59,6 +62,8 @@ export const useAuthStore = defineStore({
     },
     async logout() {
       await signOut(auth)
+      console.log('this.info.clearInfo()')
+      this.info.clearInfo()
     },
     async register({ email, password, name, agreeRules }) {
       await createUserWithEmailAndPassword(auth, email, password, name, agreeRules)
@@ -76,25 +81,13 @@ export const useAuthStore = defineStore({
     writeUserData(userId, email, password, name, agreeRules) {
       // console.log('db')
       // console.log(db)
-      set(ref(db, 'users/' + userId), {
+      set(ref(db, 'users/' + userId + '/info/'), {
+        bill: 10000,
         email,
         password,
         name,
         agreeRules
       });
     },
-    async getUserId() {
-      await onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-          console.log('user.uid')
-          console.log(user.uid)
-          return user.uid
-        } else {
-          // User is signed out
-        }
-      });
-    }
   }
 })

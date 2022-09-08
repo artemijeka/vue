@@ -1,5 +1,6 @@
 <script>
 import { useAuthStore } from "@/stores/auth";
+import { useInfoStore } from "@/stores/info";
 
 export default {
   data() {
@@ -13,10 +14,17 @@ export default {
       instanceInreval: null,
       instanceDropdown: null,
       auth: useAuthStore(),
+      info: useInfoStore(),
     };
   },
   emits: ["sidenav-toggle"],
   // inject: ["date"],
+  computed: {
+    async name() {
+      console.log('this.info.$state');
+      console.log(await this.info.$state);
+    },
+  },
   mounted() {
     this.instanceDropdown = M.Dropdown.init(this.$refs.dropdown, {});
 
@@ -30,8 +38,8 @@ export default {
   },
   methods: {
     async logout() {
-      console.log('this.auth.logout');
-      console.log(this.auth.logout);
+      console.log("this.auth.logout()");
+      console.log(this.auth.logout());
       await this.auth
         .logout()
         .then((logoutThen) => {
@@ -81,7 +89,7 @@ export default {
             data-target="dropdown"
             ref="dropdown"
           >
-            USER NAME
+            {{name}}
             <i class="material-icons right">arrow_drop_down</i>
           </a>
 

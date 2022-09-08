@@ -2,7 +2,7 @@
   я переписываю на vue3 + pinia
 
 Остановился
-  https://youtu.be/Jimf6cunaY4?t=324
+  https://youtu.be/Jimf6cunaY4?t=620
 
 Дополнительно установил
   npm i register-service-worker

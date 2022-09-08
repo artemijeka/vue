@@ -9,7 +9,7 @@
           class="validate"
          -->
         <!-- 
-          v-model:"v$.email.$model" - записан так чтобы срабатывал считыватель ввода в поле ($dirty)
+          v-model:"vuelidate$.email.$model" - записан так чтобы срабатывал считыватель ввода в поле ($dirty)
           -->
         <input
           id="email"
@@ -49,7 +49,7 @@
         </small>
         <small class="helper-text invalid" v-else-if="passShort">
           {{
-            `Password короче ${this.v$.password.minLength.$params.min} символов!`
+            `Password короче ${this.vuelidate$.password.minLength.$params.min} символов!`
           }}
         </small>
       </div>
@@ -102,7 +102,7 @@ import { useAuthStore } from "@/stores/auth";
 export default {
   name: "register-view",
   setup() {
-    return { v$: useVuelidate() };
+    return { vuelidate$: useVuelidate() };
   },
   data: () => ({
     email: "",
@@ -113,8 +113,8 @@ export default {
   }),
   methods: {
     async register() {
-      if (this.v$.$invalid) {
-        this.v$.$touch();
+      if (this.vuelidate$.$invalid) {
+        this.vuelidate$.$touch();
         return;
       } else {
         let formData = {
@@ -144,22 +144,22 @@ export default {
   },
   computed: {
     emailInvalid() {
-      return this.v$.email.email.$invalid && this.v$.email.$dirty;
+      return this.vuelidate$.email.email.$invalid && this.vuelidate$.email.$dirty;
     },
     emailValid() {
-      return !this.v$.email.email.$invalid && this.v$.email.$dirty;
+      return !this.vuelidate$.email.email.$invalid && this.vuelidate$.email.$dirty;
     },
     emailEmpty() {
-      return this.v$.email.required.$invalid && this.v$.email.$dirty;
+      return this.vuelidate$.email.required.$invalid && this.vuelidate$.email.$dirty;
     },
     passShort() {
-      return this.v$.password.minLength.$invalid;
+      return this.vuelidate$.password.minLength.$invalid;
     },
     passEmpty() {
-      return this.v$.password.required.$invalid && this.v$.password.$dirty;
+      return this.vuelidate$.password.required.$invalid && this.vuelidate$.password.$dirty;
     },
     nameEmpty() {
-      return this.v$.name.required.$invalid && this.v$.name.$dirty;
+      return this.vuelidate$.name.required.$invalid && this.vuelidate$.name.$dirty;
     },
   },
 };
