@@ -21,7 +21,7 @@ export default {
   // inject: ["date"],
   computed: {
     name() {
-      return this.info.getInfo.name
+      return this.info.getInfo.name;
     },
   },
   mounted() {

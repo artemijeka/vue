@@ -10,11 +10,9 @@
       </div>
 
       <div class="row">
-        
         <HomeBill :rates="currency.rates" />
 
         <HomeCurrency />
-        
       </div>
     </div>
   </main>
@@ -40,8 +38,8 @@ export default {
   },
   async mounted() {
     this.currency = await this.info.fetchCurrency();
-    console.log("this.currency.rates");
-    console.log(this.currency.rates);
+    // console.log("this.currency.rates");
+    // console.log(this.currency.rates);
   },
 };
 </script>

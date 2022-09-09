@@ -1,21 +1,21 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
+import App from "./App.vue";
+
+import router from "./router";
+
 import Loader from "@/components/Loader.vue";
+
+import showMessage from "@/helpers/show-message";
+import messages from "@/helpers/messages";
+import currencyFormat from "@/helpers/currency-format";
 
 // https://www.npmjs.com/package/firebase#user-content-compat-packages
 // /compat/ в пути это для совместимости чтобы из 9 весии пользоваться версией 8 firebase
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/database";
-
-import App from "./App.vue";
-
-import router from "./router";
-
-import showMessage from "@/helpers/show-message";
-import messages from "@/helpers/messages";
-import currencyFormat from "@/helpers/currency-format";
 
 firebase.initializeApp({
   apiKey: "AIzaSyCmZb9pg68mI12DEX0PvfTwug1lU84DbWI",
