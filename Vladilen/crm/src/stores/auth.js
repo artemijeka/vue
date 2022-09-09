@@ -2,13 +2,13 @@ import { defineStore } from "pinia";
 
 import firebase from "firebase/compat/app";
 
-// import { useInfoStore } from '@/stores/info'
+import { useInfoStore } from '@/stores/info'
 
 export const useAuthStore = defineStore({
   id: "auth",
   state: () => ({
     // auth: null,
-    // info: useInfoStore(),
+    info: useInfoStore(),
     error: null,
   }),
   getters: {
@@ -26,8 +26,8 @@ export const useAuthStore = defineStore({
         await firebase.auth().signInWithEmailAndPassword(email, password);
       } catch (error) {
         this.setError(error);
-        console.log("error");
-        console.log(error);
+        // console.log("error");
+        // console.log(error);
         throw error; //прокидывается ошибка чтобы завершить с ошибкой
       }
     },
@@ -39,6 +39,8 @@ export const useAuthStore = defineStore({
       try {
         await firebase.auth().createUserWithEmailAndPassword(email, password);
         const uid = await this.getUid();
+        // console.log('uid')
+        // console.log(uid)
         await firebase.database().ref(`/users/${uid}/info`).set({
           email,
           password,//это в незашифрованном виде неправильно записывать в БД так не делается!
@@ -48,13 +50,15 @@ export const useAuthStore = defineStore({
         });
       } catch (error) {
         this.setError(error);
-        console.log("error");
-        console.log(error);
+        // console.log("error");
+        // console.log(error);
         throw error; //прокидывается ошибка чтобы завершить с ошибкой
       }
     },
     async getUid() {
       const user = await firebase.auth().currentUser;
+      // console.log('user')
+      // console.log(user)
       return user ? user.uid : null;
     },
   },

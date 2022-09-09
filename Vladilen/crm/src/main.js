@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
-import Loader from '@/components/Loader.vue'
+import Loader from "@/components/Loader.vue";
 
 // https://www.npmjs.com/package/firebase#user-content-compat-packages
 // /compat/ в пути это для совместимости чтобы из 9 весии пользоваться версией 8 firebase
@@ -15,6 +15,7 @@ import router from "./router";
 
 import showMessage from "@/helpers/show-message";
 import messages from "@/helpers/messages";
+import currencyFormat from "@/helpers/currency-format";
 
 firebase.initializeApp({
   apiKey: "AIzaSyCmZb9pg68mI12DEX0PvfTwug1lU84DbWI",
@@ -37,7 +38,8 @@ firebase.auth().onAuthStateChanged(() => {
     vueApp.use(router);
     vueApp.use(showMessage);
     vueApp.use(messages);
-    vueApp.component('Loader', Loader)
+    vueApp.use(currencyFormat);
+    vueApp.component("Loader", Loader);
 
     vueApp.mount("#app");
   }

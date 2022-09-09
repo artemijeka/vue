@@ -8,6 +8,7 @@ export default {
   name: "main-layout",
   data() {
     return {
+      loading: true,
       sidenavIsOpen: true,
       info: useInfoStore(),
     };
@@ -18,10 +19,11 @@ export default {
   },
   async mounted() {
     //   // console.log(Object.keys(this.info.$state.info).length)
-    console.log("this.info.getInfo");
-    console.log(this.info.getInfo);
+    // console.log("this.info.getInfo");
+    // console.log(this.info.getInfo);
     if (!Object.keys(this.info.getInfo).length) {
       await this.info.fetchInfo();
+      this.loading = false;
     }
   },
 };
@@ -29,7 +31,9 @@ export default {
 
 <template>
   <div>
-    <div class="app-main-layout">
+    <Loader v-if="loading" />
+
+    <div v-else class="app-main-layout">
       <NavBar @sidenav-toggle="sidenavIsOpen = !sidenavIsOpen" />
 
       <SideNav :sidenavIsOpen="sidenavIsOpen" />

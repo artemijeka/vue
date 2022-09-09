@@ -9,12 +9,12 @@
         </button>
       </div>
 
-      <Loader v-if="loading" />
-
-      <div v-else class="row">
-        <HomeBill />
+      <div class="row">
+        
+        <HomeBill :rates="currency.rates" />
 
         <HomeCurrency />
+        
       </div>
     </div>
   </main>
@@ -23,27 +23,25 @@
 <script>
 import HomeBill from "@/components/HomeBill.vue";
 import HomeCurrency from "@/components/HomeCurrency.vue";
-// import Loader from "../components/Loader.vue";
 
 import { useInfoStore } from "@/stores/info";
 
 export default {
-  name: 'home-view',
+  name: "home-view",
   data() {
     return {
-      loading: true,
       currency: null,
       info: useInfoStore(),
-    }
+    };
   },
   components: {
     HomeBill,
     HomeCurrency,
-    // Loader
   },
   async mounted() {
-    this.currency = await this.info.fetchCurrency()
-    this.loading = false
-  }
+    this.currency = await this.info.fetchCurrency();
+    console.log("this.currency.rates");
+    console.log(this.currency.rates);
+  },
 };
 </script>

@@ -12,47 +12,25 @@ export const useInfoStore = defineStore({
   }),
   actions: {
     async fetchCurrency() {
-      console.log('import.meta.env.VITE_SOME_KEY')
-      console.log(import.meta.env.VITE_SOME_KEY)//!VITE_ is required!
+      console.log("import.meta.env.VITE_RATES_API");
+      console.log(import.meta.env.VITE_RATES_API); //!VITE_ is required!
+      const res = await fetch(
+        `https://openexchangerates.org/api/latest.json?app_id=${import.meta.env.VITE_RATES_API}&symbols=RUB,EUR,USD`
+      );
+      // console.log('await res.json()')
+      // console.log(await res.json())
+      return await res.json()
     },
     async fetchInfo() {
       const uid = await this.auth.getUid();
-      console.log("uid");
-      console.log(uid);
+      // console.log("uid");
+      // console.log(uid);
       const info = (
         await firebase.database().ref(`/users/${uid}/info`).once("value")
       ).val();
       // console.log('info')
       // console.log(info)
       this.setInfo(info);
-      // await onAuthStateChanged(auth, (user) => {
-      //   if (user) {
-      //     try {
-      //       // User is signed in, see docs for a list of available properties
-      //       // https://firebase.google.com/docs/reference/js/firebase.User
-      //       // console.log('user.uid')
-      //       // console.log(user.uid)
-      //       const starCountRef = ref(db, "users/" + user.uid + "/info/");
-      //       onValue(starCountRef, (snapshot) => {
-      //         const data = snapshot.val();
-      //         console.log("data");
-      //         console.log(data);
-      //         this.$state.info = data;
-      //         // this.setInfo(data)
-      //         console.log("this.$state.info");
-      //         console.log(this.$state.info);
-      //         return data;
-      //         // this.setInfo(data)
-      //         // updateStarCount(postElement, data);
-      //       });
-      //     } catch (error) {
-      //       console.error(error);
-      //     }
-      //   } else {
-      //     // User is signed out
-      //     console.log("User is signed out");
-      //   }
-      // });
     },
     async setInfo(info) {
       this.$state.info = info;
@@ -64,6 +42,6 @@ export const useInfoStore = defineStore({
     },
   },
   getters: {
-    getInfo: (s) => s.info,
+    getInfo: (state) => state.info,
   },
 });
