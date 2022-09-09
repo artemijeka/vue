@@ -17,11 +17,11 @@ export default {
     SideNav,
   },
   async mounted() {
-    // console.log(Object.keys(this.info.$state.info).length)
-    if (!Object.keys(this.info.$state.info).length) {
-      let fetchInfo = await this.info.fetchInfo()
-      console.log('fetchInfo')
-      console.log(fetchInfo)
+    //   // console.log(Object.keys(this.info.$state.info).length)
+    console.log("this.info.getInfo");
+    console.log(this.info.getInfo);
+    if (!Object.keys(this.info.getInfo).length) {
+      await this.info.fetchInfo();
     }
   },
 };

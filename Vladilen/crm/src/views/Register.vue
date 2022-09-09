@@ -121,6 +121,7 @@ export default {
           email: this.email,
           password: this.password,
           name: this.name,
+          bill: 10000,
           agreeRules: this.agreeRules,
         };
         console.log(formData);
@@ -128,8 +129,9 @@ export default {
           await this.auth.register(formData);
           this.$router.push("/");
         } catch (error) {
-          // console.error(error);
-          // throw error
+          console.error('error');
+          console.error(error);
+          throw error
         }
       }
     },

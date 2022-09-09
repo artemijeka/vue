@@ -1,93 +1,61 @@
-import { defineStore } from 'pinia'
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set } from "firebase/database";
-import { getAuth, signOut, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { defineStore } from "pinia";
 
-import { useInfoStore } from '@/stores/info'
+import firebase from "firebase/compat/app";
 
-const firebaseApp = initializeApp({
-  apiKey: "AIzaSyCmZb9pg68mI12DEX0PvfTwug1lU84DbWI",
-  authDomain: "crm-vue-vladilen.firebaseapp.com",
-  projectId: "crm-vue-vladilen",
-  storageBucket: "crm-vue-vladilen.appspot.com",
-  messagingSenderId: "173651020409",
-  appId: "1:173651020409:web:8e88678e3b8ddc2fb422a8",
-  databaseURL: "https://crm-vue-vladilen-default-rtdb.asia-southeast1.firebasedatabase.app"
-});
-
-export const auth = getAuth(firebaseApp);
-
-export const db = getDatabase(firebaseApp);
-// console.log('db')
-// console.log(db)
+// import { useInfoStore } from '@/stores/info'
 
 export const useAuthStore = defineStore({
-  id: 'auth',
+  id: "auth",
   state: () => ({
     // auth: null,
-    info: useInfoStore(),
+    // info: useInfoStore(),
     error: null,
   }),
   getters: {
-    error: (state) => (state.error)
+    error: (s) => s.error,
   },
   actions: {
     setError(error) {
-      this.$state.error = error
+      this.$state.error = error;
     },
-    clearError(state) {
-      state.error = null
+    clearError() {
+      this.$state.error = null;
     },
     async login({ email, password }) {
-      // try {
-      await signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          console.log(user)
-        })
-        .catch((error) => {
-          this.setError(error.code)
-          // console.error(error.code)
-          // console.error(error.message)
-          throw error
-        });
-      // } catch (error) {
-      //   const errorCode = error.code;
-      //   const errorMessage = error.message;
-      //   console.error(errorCode)
-      //   console.error(errorMessage)
-      //   throw error
-      // }
+      try {
+        await firebase.auth().signInWithEmailAndPassword(email, password);
+      } catch (error) {
+        this.setError(error);
+        console.log("error");
+        console.log(error);
+        throw error; //прокидывается ошибка чтобы завершить с ошибкой
+      }
     },
     async logout() {
-      await signOut(auth)
-      console.log('this.info.clearInfo()')
-      this.info.clearInfo()
+      await firebase.auth().signOut();
+      this.info.clearInfo();
     },
-    async register({ email, password, name, agreeRules }) {
-      await createUserWithEmailAndPassword(auth, email, password, name, agreeRules)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          this.writeUserData(user.uid, email, password, name, agreeRules)
-        })
-        .catch((error) => {
-          this.setError(error.code)
-          // console.error(error.code)
-          // console.error(error.message)
-          throw error
+    async register({ email, password, name, bill, agreeRules }) {
+      try {
+        await firebase.auth().createUserWithEmailAndPassword(email, password);
+        const uid = await this.getUid();
+        await firebase.database().ref(`/users/${uid}/info`).set({
+          email,
+          password,//это в незашифрованном виде неправильно записывать в БД так не делается!
+          name,
+          bill,
+          agreeRules,
         });
+      } catch (error) {
+        this.setError(error);
+        console.log("error");
+        console.log(error);
+        throw error; //прокидывается ошибка чтобы завершить с ошибкой
+      }
     },
-    writeUserData(userId, email, password, name, agreeRules) {
-      // console.log('db')
-      // console.log(db)
-      set(ref(db, 'users/' + userId + '/info/'), {
-        bill: 10000,
-        email,
-        password,
-        name,
-        agreeRules
-      });
+    async getUid() {
+      const user = await firebase.auth().currentUser;
+      return user ? user.uid : null;
     },
-  }
-})
+  },
+});

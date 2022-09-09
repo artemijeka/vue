@@ -21,7 +21,7 @@ export default {
   // inject: ["date"],
   computed: {
     name() {
-      return 'test'
+      return this.info.getInfo.name
     },
   },
   mounted() {
@@ -37,23 +37,8 @@ export default {
   },
   methods: {
     async logout() {
-      console.log("this.auth.logout()");
-      console.log(this.auth.logout());
-      await this.auth
-        .logout()
-        .then((logoutThen) => {
-          // Log out
-          // console.log('logoutThen');
-          // console.log(logoutThen);
-          this.$router.push("/login?message=logout");
-        })
-        .catch((error) => {
-          // const errorCode = error.code;
-          // const errorMessage = error.message;
-          // console.error(errorCode);
-          // console.error(errorMessage);
-          throw error;
-        });
+      await this.auth.logout();
+      this.$router.push("/login?message=logout");
     },
   },
   beforeUnmount() {
@@ -88,7 +73,7 @@ export default {
             data-target="dropdown"
             ref="dropdown"
           >
-            {{name}}
+            {{ name }}
             <i class="material-icons right">arrow_drop_down</i>
           </a>
 

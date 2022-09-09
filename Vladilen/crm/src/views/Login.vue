@@ -20,7 +20,6 @@ export default {
         this.v$.$touch();
         return;
       } else {
-        
         let formData = {
           email: this.email,
           password: this.password,
@@ -28,15 +27,15 @@ export default {
         // console.log(formData);
 
         try {
-          // console.log("this.auth");
-          // console.log(this.auth);
+          console.log("this.auth");
+          console.log(this.auth);
           await this.auth.login(formData);
           this.$router.push("/");
         } catch (error) {
-          // console.error(error);
+          console.error("error");
+          console.error(error);
           // throw error
         }
-
       }
     },
   },
