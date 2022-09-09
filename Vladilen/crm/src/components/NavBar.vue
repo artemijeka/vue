@@ -20,9 +20,8 @@ export default {
   emits: ["sidenav-toggle"],
   // inject: ["date"],
   computed: {
-    async name() {
-      console.log('this.info.$state');
-      console.log(await this.info.$state);
+    name() {
+      return 'test'
     },
   },
   mounted() {
