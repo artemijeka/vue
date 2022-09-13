@@ -1,3 +1,32 @@
+<script>
+import HomeBill from "@/components/HomeBill.vue";
+import HomeCurrency from "@/components/HomeCurrency.vue";
+
+import { useInfoStore } from "@/stores/info";
+
+export default {
+  name: "home-view",
+  data() {
+    return {
+      rates: null,
+      info: useInfoStore(),
+    };
+  },
+  components: {
+    HomeBill,
+    HomeCurrency,
+  },
+  async mounted() {
+    this.rates = await this.info.fetchRates();
+    // this.rates = { ...this.rates };
+    // this.rates = JSON.parse(JSON.stringify(this.rates))
+    console.log("this.rates");
+    console.log(this.rates);
+  },
+  watch: {},
+};
+</script>
+
 <template>
   <main>
     <div>
@@ -10,36 +39,10 @@
       </div>
 
       <div class="row">
-        <HomeBill :rates="currency.rates" />
+        <HomeBill :rates="rates" />
 
         <HomeCurrency />
       </div>
     </div>
   </main>
 </template>
-
-<script>
-import HomeBill from "@/components/HomeBill.vue";
-import HomeCurrency from "@/components/HomeCurrency.vue";
-
-import { useInfoStore } from "@/stores/info";
-
-export default {
-  name: "home-view",
-  data() {
-    return {
-      currency: null,
-      info: useInfoStore(),
-    };
-  },
-  components: {
-    HomeBill,
-    HomeCurrency,
-  },
-  async mounted() {
-    this.currency = await this.info.fetchCurrency();
-    // console.log("this.currency.rates");
-    // console.log(this.currency.rates);
-  },
-};
-</script>

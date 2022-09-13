@@ -11,7 +11,7 @@ export default {
         year: "numeric",
       }).format(new Date()),
       time: "",
-      instanceInreval: null,
+      instanceInterval: null,
       instanceDropdown: null,
       auth: useAuthStore(),
       info: useInfoStore(),
@@ -25,9 +25,9 @@ export default {
     },
   },
   mounted() {
-    this.instanceDropdown = M.Dropdown.init(this.$refs.dropdown, {});
+    // this.instanceDropdown = M.Dropdown.init(this.$refs.dropdown, {});
 
-    this.instanceInreval = setInterval(() => {
+    this.instanceInterval = setInterval(() => {
       this.time = Intl.DateTimeFormat("ru-RU", {
         hour: "2-digit",
         minute: "2-digit",
@@ -43,8 +43,8 @@ export default {
   },
   beforeUnmount() {
     console.log("NavBar.vue beforeUnmount");
-    clearInterval(this.instanceInreval);
-    console.log("clearInterval(this.instanceInreval)");
+    clearInterval(this.instanceInterval);
+    console.log("clearInterval(this.instanceInterval)");
 
     if (this.instanceDropdown && this.instanceDropdown.destroy) {
       console.log("this.instanceDropdown && this.instanceDropdown.destroy)");
@@ -83,7 +83,7 @@ export default {
                 <i class="material-icons">account_circle</i>Профиль
               </RouterLink>
             </li>
-            <li class="divider" tabindex="-1"></li>
+            <li class="divider" tabIndex="-1"></li>
             <li>
               <a href="#" class="black-text" @click.prevent="logout">
                 <i class="material-icons">assignment_return</i>Выйти

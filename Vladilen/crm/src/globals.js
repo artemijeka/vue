@@ -14,7 +14,8 @@
 
 export default {
   install(app, options) {
-    app.config.globalProperties.$testttttt = {
+    app.config.globalProperties.$test = {
+      return 'test /src/globals.js'
     }
   }
 }

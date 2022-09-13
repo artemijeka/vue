@@ -11,15 +11,12 @@ export const useInfoStore = defineStore({
     auth: useAuthStore(),
   }),
   actions: {
-    async fetchCurrency() {
-      console.log("import.meta.env.VITE_RATES_API");
-      console.log(import.meta.env.VITE_RATES_API); //!VITE_ is required!
+    async fetchRates() {
+      const key = import.meta.env.VITE_RATES_API; //!VITE_ is required!
       const res = await fetch(
-        `https://openexchangerates.org/api/latest.json?app_id=${import.meta.env.VITE_RATES_API}&symbols=RUB,EUR,USD`
+        `https://openexchangerates.org/api/latest.json?app_id=${key}&symbols=RUB,EUR,USD`
       );
-      // console.log('await res.json()')
-      // console.log(await res.json())
-      return await res.json()
+      return await res.json();
     },
     async fetchInfo() {
       const uid = await this.auth.getUid();

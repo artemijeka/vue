@@ -2,7 +2,6 @@
 // import { RouterLink, RouterView } from 'vue-router'
 
 import "materialize-css/dist/js/materialize.min.js";
-import "materialize-css/dist/css/materialize.min.css";
 
 import EmptyLayout from "@/layouts/Empty.vue";
 import MainLayout from "@/layouts/Main.vue";
@@ -45,4 +44,5 @@ export default {
 // @import 'materialize-css/dist/css/materialize.min.css';
 @import "@/assets/main.scss";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "materialize-css/dist/css/materialize.min.css";
 </style>
