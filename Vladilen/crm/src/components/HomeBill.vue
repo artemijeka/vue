@@ -7,7 +7,7 @@
         <p v-for="cur in currencies" :key="cur" class="currency-line">
           <!-- <span>{{ this.$currencyFormat(getCurrency(cur)) }}</span> -->
           <!-- <span>{{ getCurrency(cur) }}</span> -->
-          <!-- <span>{{ cur }}</span> -->
+          <span>{{ cur }}</span>
         </p>
       </div>
     </div>
@@ -23,7 +23,10 @@ export default {
     info: useInfoStore(),
     currencies: ["RUB", "EUR", "USD"],
   }),
-  mounted() {},
+  mounted() {
+    console.log('this.rates')
+    console.log(this.rates)
+  },
   computed: {
     base() {
       /**
@@ -32,8 +35,6 @@ export default {
        * по этому делим на курс доллора и получаем сколько у нас рублей в долларах,
        * потому что в API openexchangerates.org базовая валюта USD
        */
-      console.log('this.rates')
-      console.log(this.rates)
       return this.info.getInfo.bill / (this.rates["RUB"] / this.rates["USD"]); //!получаем base который равен нашей сумме рублей в долларах
     },
   },
@@ -46,8 +47,8 @@ export default {
 </script>
 
 <style lang="scss">
-  .currency-line {
-    display: flex;
-    justify-content: space-between;
-  }
+.currency-line {
+  display: flex;
+  justify-content: space-between;
+}
 </style>

@@ -11,7 +11,7 @@ export const useInfoStore = defineStore({
     auth: useAuthStore(),
   }),
   actions: {
-    async fetchRates() {
+    async fetchCurrency() {
       const key = import.meta.env.VITE_RATES_API; //!VITE_ is required!
       const res = await fetch(
         `https://openexchangerates.org/api/latest.json?app_id=${key}&symbols=RUB,EUR,USD`

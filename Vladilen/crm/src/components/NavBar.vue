@@ -25,7 +25,7 @@ export default {
     },
   },
   mounted() {
-    // this.instanceDropdown = M.Dropdown.init(this.$refs.dropdown, {});
+    this.instanceDropdown = M.Dropdown.init(this.$refs.dropdown, {});
 
     this.instanceInterval = setInterval(() => {
       this.time = Intl.DateTimeFormat("ru-RU", {

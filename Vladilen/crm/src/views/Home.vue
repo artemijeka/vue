@@ -8,7 +8,8 @@ export default {
   name: "home-view",
   data() {
     return {
-      rates: null,
+      loading: true,
+      currency: null,
       info: useInfoStore(),
     };
   },
@@ -16,20 +17,33 @@ export default {
     HomeBill,
     HomeCurrency,
   },
+  created() {},
   async mounted() {
-    this.rates = await this.info.fetchRates();
-    // this.rates = { ...this.rates };
-    // this.rates = JSON.parse(JSON.stringify(this.rates))
-    console.log("this.rates");
-    console.log(this.rates);
+    this.currency = await this.info.fetchCurrency();
+    console.log("this.currency");
+    console.log(this.currency);
+    this.loading = false;
   },
-  watch: {},
+  computed: {
+    // currency() {
+    //   this.info.fetchCurrency().then((res) => {
+    //     console.log('res');
+    //     console.log(res);
+    //     return res;
+    //   });
+    // },
+  },
+  watch: {
+    currency() {},
+  },
 };
 </script>
 
 <template>
   <main>
-    <div>
+    <Loader v-if="loading" />
+
+    <div v-else>
       <div class="page-title">
         <h3>Счет</h3>
 
@@ -39,7 +53,7 @@ export default {
       </div>
 
       <div class="row">
-        <HomeBill :rates="rates" />
+        <HomeBill :rates="currency.rates" />
 
         <HomeCurrency />
       </div>
