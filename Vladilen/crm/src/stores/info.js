@@ -25,8 +25,8 @@ export const useInfoStore = defineStore({
       const info = (
         await firebase.database().ref(`/users/${uid}/info`).once("value")
       ).val();
-      // console.log('info')
-      // console.log(info)
+      console.log("info");
+      console.log(info);
       this.setInfo(info);
     },
     async setInfo(info) {
@@ -39,6 +39,8 @@ export const useInfoStore = defineStore({
     },
   },
   getters: {
-    getInfo: (state) => state.info,
+    getInfo: (state) => {
+      return state.info;
+    },
   },
 });

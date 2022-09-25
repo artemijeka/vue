@@ -5,7 +5,7 @@
         <span class="card-title">Счет в валюте</span>
 
         <p v-for="cur in currencies" :key="cur" class="currency-line">
-          <!-- <span>{{ this.$currencyFormat(getCurrency(cur)) }}</span> -->
+          <span>{{ this.$currencyFormat(getCurrency(cur), cur) }}</span>
           <!-- <span>{{ getCurrency(cur) }}</span> -->
           <span>{{ cur }}</span>
         </p>
@@ -40,6 +40,12 @@ export default {
   },
   methods: {
     getCurrency(currency) {
+      console.log('currency')
+      console.log(currency)
+      console.log('this.base')
+      console.log(this.base)
+      console.log('this.rates[currency]')
+      console.log(this.rates[currency])
       return (this.base * this.rates[currency]).toFixed(2);
     },
   },
