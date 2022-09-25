@@ -15,10 +15,10 @@
           </thead>
 
           <tbody>
-            <tr>
-              <td>руб</td>
-              <td>12121</td>
-              <td>12.12.12</td>
+            <tr v-for="cur in currencies" :key="cur">
+              <td>{{cur}}</td>
+              <td>{{rates[cur].toFixed(2)}}</td>
+              <td>{{timestamp}}</td>
             </tr>
           </tbody>
         </table>
@@ -28,6 +28,13 @@
 </template>
 
 <script>
-  export default {
-  }
+import { useInfoStore } from "@/stores/info";
+
+export default {
+  props: ["rates", "timestamp"],
+  data: () => ({
+    info: useInfoStore(),
+    currencies: ["RUB", "EUR", "USD"],
+  }),
+};
 </script>

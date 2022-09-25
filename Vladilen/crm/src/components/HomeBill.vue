@@ -24,8 +24,8 @@ export default {
     currencies: ["RUB", "EUR", "USD"],
   }),
   mounted() {
-    console.log('this.rates')
-    console.log(this.rates)
+    // console.log('this.rates')
+    // console.log(this.rates)
   },
   computed: {
     base() {
@@ -40,12 +40,12 @@ export default {
   },
   methods: {
     getCurrency(currency) {
-      console.log('currency')
-      console.log(currency)
-      console.log('this.base')
-      console.log(this.base)
-      console.log('this.rates[currency]')
-      console.log(this.rates[currency])
+      // console.log('currency')
+      // console.log(currency)
+      // console.log('this.base')
+      // console.log(this.base)
+      // console.log('this.rates[currency]')
+      // console.log(this.rates[currency])
       return (this.base * this.rates[currency]).toFixed(2);
     },
   },

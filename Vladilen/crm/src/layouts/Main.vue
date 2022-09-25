@@ -10,6 +10,7 @@ export default {
     return {
       sidenavIsOpen: true,
       info: useInfoStore(),
+      loading: true,
     };
   },
   components: {
@@ -23,14 +24,16 @@ export default {
     if (!Object.keys(this.info.getInfo).length) {
       await this.info.fetchInfo();
     }
+    this.loading = false;
   },
 };
 </script>
 
 <template>
   <div>
+    <Loader v-if="loading" />
 
-    <div class="app-main-layout">
+    <div v-else class="app-main-layout">
       <NavBar @sidenav-toggle="sidenavIsOpen = !sidenavIsOpen" />
 
       <SideNav :sidenavIsOpen="sidenavIsOpen" />

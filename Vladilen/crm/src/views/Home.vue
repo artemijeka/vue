@@ -19,10 +19,16 @@ export default {
   },
   created() {},
   async mounted() {
-    this.currency = await this.info.fetchCurrency();
-    console.log("this.currency");
-    console.log(this.currency);
-    this.loading = false;
+    this.refresh()
+  },
+  methods: {
+    async refresh() {
+      this.loading = true;
+      this.currency = await this.info.fetchCurrency();
+      console.log("this.currency");
+      console.log(this.currency);
+      this.loading = false;
+    },
   },
   computed: {
     // currency() {
@@ -33,8 +39,7 @@ export default {
     //   });
     // },
   },
-  watch: {
-  },
+  watch: {},
 };
 </script>
 
@@ -46,7 +51,7 @@ export default {
       <div class="page-title">
         <h3>Счет</h3>
 
-        <button class="btn waves-effect waves-light btn-small">
+        <button class="btn waves-effect waves-light btn-small" @click="refresh">
           <i class="material-icons">refresh</i>
         </button>
       </div>
@@ -54,7 +59,7 @@ export default {
       <div class="row">
         <HomeBill :rates="currency.rates" />
 
-        <HomeCurrency />
+        <HomeCurrency :rates="currency.rates" :timestamp="currency.timestamp" />
       </div>
     </div>
   </main>

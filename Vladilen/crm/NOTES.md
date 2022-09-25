@@ -2,7 +2,7 @@
   я переписываю на vite + vue3 + pinia
 
 Остановился
-  https://youtu.be/Jimf6cunaY4?t=715
+  https://www.youtube.com/watch?v=mf0GCr5AB5o
 
 Дополнительно установил
   npm i register-service-worker
