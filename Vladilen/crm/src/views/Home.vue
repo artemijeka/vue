@@ -2,7 +2,7 @@
 import HomeBill from "@/components/HomeBill.vue";
 import HomeCurrency from "@/components/HomeCurrency.vue";
 
-import { useInfoStore } from "@/stores/info";
+import { useStoreInfo } from "@/stores/info";
 
 export default {
   name: "home-view",
@@ -10,7 +10,7 @@ export default {
     return {
       loading: true,
       currency: null,
-      info: useInfoStore(),
+      info: useStoreInfo(),
     };
   },
   components: {

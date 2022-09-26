@@ -45,3 +45,18 @@
     </form>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'record',
+    data() {
+      loading: true,
+      categories: []
+    },
+    async mounted() {
+      this.categories = await this.$storeInfo.fetchCategories()
+      console.log('this.categories')
+      console.log(this.categories)
+    },
+  }
+</script>

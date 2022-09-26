@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import { useInfoStore } from "@/stores/info";
+import { useStoreInfo } from "@/stores/info";
 
 export default {
   props: ["rates"],
   data: () => ({
-    info: useInfoStore(),
+    info: useStoreInfo(),
     currencies: ["RUB", "EUR", "USD"],
   }),
   mounted() {

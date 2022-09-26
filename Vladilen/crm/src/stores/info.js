@@ -1,18 +1,18 @@
 import { defineStore } from "pinia";
 
-import { useAuthStore } from "./auth";
+import { useStoreAuth } from "./auth";
 
 import firebase from "firebase/compat/app";
 
-export const useInfoStore = defineStore({
+export const useStoreInfo = defineStore({
   id: "info",
   state: () => ({
     info: {},
-    auth: useAuthStore(),
+    auth: useStoreAuth(),
   }),
   actions: {
     async fetchCurrency() {
-      const key = import.meta.env.VITE_RATES_API; //!VITE_ is required!
+      const key = import.meta.env.VITE_RATES_API;//!VITE_ is required!
       const res = await fetch(
         `https://openexchangerates.org/api/latest.json?app_id=${key}&symbols=RUB,EUR,USD`
       );

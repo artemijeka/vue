@@ -5,11 +5,14 @@ import App from "./App.vue";
 
 import router from "./router";
 
+import storeInfo from "@/globals/store-info";
+
 import Loader from "@/components/Loader.vue";
 
 import showMessage from "@/helpers/show-message";
 import messages from "@/helpers/messages";
 import currencyFormat from "@/helpers/currency-format";
+
 
 // https://www.npmjs.com/package/firebase#user-content-compat-packages
 // /compat/ в пути это для совместимости чтобы из 9 весии пользоваться версией 8 firebase
@@ -36,9 +39,16 @@ firebase.auth().onAuthStateChanged(() => {
 
     vueApp.use(createPinia());
     vueApp.use(router);
+
+    // Globals:
+    vueApp.use(storeInfo);
+
+    // Helpers:
     vueApp.use(showMessage);
     vueApp.use(messages);
     vueApp.use(currencyFormat);
+
+    // Components:
     vueApp.component("Loader", Loader);
 
     vueApp.mount("#app");

@@ -2,13 +2,13 @@ import { defineStore } from "pinia";
 
 import firebase from "firebase/compat/app";
 
-import { useInfoStore } from '@/stores/info'
+import { useStoreInfo } from '@/stores/info'
 
-export const useAuthStore = defineStore({
+export const useStoreAuth = defineStore({
   id: "auth",
   state: () => ({
     // auth: null,
-    info: useInfoStore(),
+    info: useStoreInfo(),
     error: null,
   }),
   getters: {

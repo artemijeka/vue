@@ -97,7 +97,7 @@
 <script>
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
-import { useAuthStore } from "@/stores/auth";
+import { useStoreAuth } from "@/stores/auth";
 
 export default {
   name: "register-view",
@@ -109,7 +109,7 @@ export default {
     password: "",
     name: "",
     agreeRules: false,
-    auth: useAuthStore(),
+    auth: useStoreAuth(),
   }),
   methods: {
     async register() {

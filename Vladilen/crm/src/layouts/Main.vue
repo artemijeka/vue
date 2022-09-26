@@ -2,14 +2,14 @@
 import NavBar from "@/components/NavBar.vue";
 import SideNav from "@/components/SideNav.vue";
 
-import { useInfoStore } from "@/stores/info";
+import { useStoreInfo } from "@/stores/info";
 
 export default {
   name: "main-layout",
   data() {
     return {
       sidenavIsOpen: true,
-      info: useInfoStore(),
+      info: useStoreInfo(),
       loading: true,
     };
   },
