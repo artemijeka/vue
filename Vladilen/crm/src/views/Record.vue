@@ -27,13 +27,13 @@
       </p>
 
       <div class="input-field">
-        <input id="amount" type="number">
+        <input id="amount" type="number" />
         <label for="amount">Сумма</label>
         <span class="helper-text invalid">amount пароль</span>
       </div>
 
       <div class="input-field">
-        <input id="description" type="text">
+        <input id="description" type="text" />
         <label for="description">Описание</label>
         <span class="helper-text invalid">description пароль</span>
       </div>
@@ -47,16 +47,19 @@
 </template>
 
 <script>
-  export default {
-    name: 'record',
-    data() {
+export default {
+  name: "record",
+  data() {
+    return {
       loading: true,
-      categories: []
-    },
-    async mounted() {
-      this.categories = await this.$storeInfo.fetchCategories()
-      console.log('this.categories')
-      console.log(this.categories)
-    },
-  }
+      categories: [],
+    };
+  },
+  async mounted() {
+    this.categories = await this.$storeInfo.fetchCategories();
+    this.loading = false;
+    console.log("this.categories");
+    console.log(this.categories);
+  },
+};
 </script>
