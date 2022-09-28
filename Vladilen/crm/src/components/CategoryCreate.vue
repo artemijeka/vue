@@ -10,10 +10,9 @@
           <input
             id="name"
             type="text"
-            v-model="title"
+            v-model="title" 
             :class="{
-              '--invalid':
-                $vuelidate.title.$dirty && !$vuelidate.title.required,
+              '--invalid': ($vuelidate.title.$dirty && !$vuelidate.title.required),
             }"
           />
           <label for="name">Название</label>
@@ -67,6 +66,8 @@ export default {
   },
   mounted() {
     // M.updateTextFields()
+    console.log('this.$vuelidate')
+    console.log(this.$vuelidate)
   },
   methods: {
     submitHandler() {

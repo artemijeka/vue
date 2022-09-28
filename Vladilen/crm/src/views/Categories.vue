@@ -5,8 +5,11 @@
     </div>
     <section>
       <div class="row">
+        
         <CategoryCreate />
+        
         <CategoryEdit />
+        
       </div>
     </section>
   </div>

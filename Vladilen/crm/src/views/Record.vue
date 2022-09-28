@@ -56,7 +56,7 @@ export default {
     };
   },
   async mounted() {
-    this.categories = await this.$storeInfo.fetchCategories();
+    // this.categories = await this.$storeInfo.fetchCategories();
     this.loading = false;
     console.log("this.categories");
     console.log(this.categories);
