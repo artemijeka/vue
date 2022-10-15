@@ -7,8 +7,9 @@ import router from "./router";
 
 import Loader from "@/components/Loader.vue";
 
-import showMessage from "@/helpers/show-message";
-import messages from "@/helpers/messages";
+import showMessage from "@/globals/show-message";
+import messages from "@/globals/messages";
+import storeInfo from "@/globals/store-info";
 
 // import 'materialize-css/dist/css/materialize.min.css'
 // import './assets/main.scss'
@@ -46,6 +47,7 @@ vueApp = createApp(App);
 vueApp.component("Loader", Loader);
 vueApp.use(createPinia());
 vueApp.use(router);
+vueApp.use(storeInfo);
 vueApp.use(showMessage);
 vueApp.use(messages);
 

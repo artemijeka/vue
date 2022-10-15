@@ -36,7 +36,8 @@ export default {
       // date: this.date
     };
   },
-  mounted() {},
+  mounted() {
+  },
 };
 </script>
 

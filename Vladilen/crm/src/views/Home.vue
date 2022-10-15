@@ -9,7 +9,7 @@
         </button>
       </div>
 
-      <Loader v-if="loading"/>
+      <Loader v-if="loading" />
 
       <div v-else class="row">
         <HomeBill />
@@ -23,9 +23,13 @@
 <script setup>
 import HomeBill from "@/components/HomeBill.vue";
 import HomeCurrency from "@/components/HomeCurrency.vue";
-import {ref} from 'vue';
+import { ref, onMounted } from "vue";
 import Loader from "../components/Loader.vue";
 
 let loading = ref(true),
   currency = ref(null);
+
+onMounted(() => {
+  console.log($storeInfo);
+});
 </script>
