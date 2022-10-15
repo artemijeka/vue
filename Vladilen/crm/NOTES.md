@@ -1,5 +1,5 @@
 Владилен делал на vue 2 + vuex
-  я переписываю на vue3 + pinia
+  я переписываю на vue3 (composition api) + pinia
 
 Остановился
   https://youtu.be/Jimf6cunaY4?t=620

@@ -1,18 +1,18 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import App from './App.vue'
+import App from "./App.vue";
 
-import router from './router'
+import router from "./router";
 
-import showMessage from '@/helpers/show-message'
-import messages from '@/helpers/messages'
+import Loader from "@/components/Loader.vue";
+
+import showMessage from "@/helpers/show-message";
+import messages from "@/helpers/messages";
 
 // import 'materialize-css/dist/css/materialize.min.css'
 // import './assets/main.scss'
 // import 'materialize-css/dist/js/materialize.min.js'
-
-
 
 // // TODO наверно надо убрать дублирование фаербэйс здесь и в сторе auth
 // // Import the functions you need from the SDKs you need
@@ -34,21 +34,22 @@ import messages from '@/helpers/messages'
 
 // const auth = getAuth(firebaseApp);
 
-let vueApp = null
+let vueApp = null;
 
 // onAuthStateChanged(auth, (user) => {
 //   console.log('user')
 //   console.log(user)
 
 //   if (!vueApp) {
-    vueApp = createApp(App)
+vueApp = createApp(App);
 
-    vueApp.use(createPinia())
-    vueApp.use(router)
-    vueApp.use(showMessage)
-    vueApp.use(messages)
+vueApp.component("Loader", Loader);
+vueApp.use(createPinia());
+vueApp.use(router);
+vueApp.use(showMessage);
+vueApp.use(messages);
 
-    vueApp.mount('#app')
+vueApp.mount("#app");
 //   }
 
 //   if (user) {

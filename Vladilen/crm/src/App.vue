@@ -1,17 +1,21 @@
 <script>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 
-import 'materialize-css/dist/js/materialize.min.js'
+import "materialize-css/dist/js/materialize.min.js";
 
-import EmptyLayout from '@/layouts/Empty.vue'
-import MainLayout from '@/layouts/Main.vue'
+import EmptyLayout from "@/layouts/Empty.vue";
+import MainLayout from "@/layouts/Main.vue";
 
 export default {
+  data() {
+    return {
+    };
+  },
   computed: {
     layout() {
       // console.log(this.$route.meta.layout)
       // Здесь он сделал по другому https://youtu.be/Pm2aASoksJU?t=1460
-      return this.$route.meta.layout
+      return this.$route.meta.layout;
     },
     // date() {
     //   const dateObj = new Date();
@@ -25,16 +29,15 @@ export default {
   },
   components: {
     EmptyLayout,
-    MainLayout
+    MainLayout,
   },
   provide() {
     return {
       // date: this.date
-    }
+    };
   },
-  mounted() {
-  }
-}
+  mounted() {},
+};
 </script>
 
 
@@ -46,7 +49,7 @@ export default {
 
 
 <style lang="scss">
-  @import 'materialize-css/dist/css/materialize.min.css';
-  @import '@/assets/main.scss';
-  @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import "materialize-css/dist/css/materialize.min.css";
+@import "@/assets/main.scss";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 </style>

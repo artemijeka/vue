@@ -62,8 +62,8 @@ export const useAuthStore = defineStore({
     },
     async logout() {
       await signOut(auth)
-      console.log('this.info.clearInfo()')
-      this.info.clearInfo()
+      // console.log('this.info.clearInfo()')
+      // this.info.clearInfo()
     },
     async register({ email, password, name, agreeRules }) {
       await createUserWithEmailAndPassword(auth, email, password, name, agreeRules)
