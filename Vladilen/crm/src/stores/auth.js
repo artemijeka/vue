@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
 import { getAuth, signOut, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
-import { useInfoStore } from '@/stores/info'
+import { useStoreInfo } from '@/stores/info'
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyCmZb9pg68mI12DEX0PvfTwug1lU84DbWI",
@@ -21,11 +21,11 @@ export const db = getDatabase(firebaseApp);
 // console.log('db')
 // console.log(db)
 
-export const useAuthStore = defineStore({
+export const useStoreAuth = defineStore({
   id: 'auth',
   state: () => ({
     // auth: null,
-    info: useInfoStore(),
+    info: useStoreInfo(),
     error: null,
   }),
   getters: {

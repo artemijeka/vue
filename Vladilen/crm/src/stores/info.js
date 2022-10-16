@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-// import { useAuthStore } from './auth'
+// import { useStoreAuth } from './auth'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 // const auth = getAuth();
 import { auth, db } from "@/stores/auth";
@@ -8,11 +8,11 @@ import { auth, db } from "@/stores/auth";
 import { getDatabase, ref, set, onValue } from "firebase/database";
 // const db = getDatabase();
 
-export const useInfoStore = defineStore({
+export const useStoreInfo = defineStore({
   id: "info",
   state: () => ({
     info: {},
-    // auth: useAuthStore()
+    // auth: useStoreAuth()
   }),
   actions: {
     async fetchInfo() {
@@ -48,9 +48,9 @@ export const useInfoStore = defineStore({
     // async setInfo(data) {
     // this.$state.info = data
     // },
-    // clearInfo() {
-    //   // this.info = {}
-    // },
+    clearInfo() {
+      this.$state.info = {}
+    },
   },
   getters: {
     info: (state) => state.info,

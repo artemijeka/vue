@@ -1,6 +1,6 @@
 <script>
-import { useAuthStore } from "@/stores/auth";
-import { useInfoStore } from "@/stores/info";
+import { useStoreAuth } from "@/stores/auth";
+import { useStoreInfo } from "@/stores/info";
 
 export default {
   data() {
@@ -13,8 +13,8 @@ export default {
       time: "",
       instanceInreval: null,
       instanceDropdown: null,
-      auth: useAuthStore(),
-      info: useInfoStore(),
+      auth: useStoreAuth(),
+      info: useStoreInfo(),
     };
   },
   emits: ["sidenav-toggle"],

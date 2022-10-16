@@ -2,7 +2,7 @@
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
 
-import { useAuthStore } from "@/stores/auth";
+import { useStoreAuth } from "@/stores/auth";
 
 export default {
   name: "login-view",
@@ -12,7 +12,7 @@ export default {
   data: () => ({
     email: "",
     password: "",
-    auth: useAuthStore(),
+    auth: useStoreAuth(),
   }),
   methods: {
     async login() {

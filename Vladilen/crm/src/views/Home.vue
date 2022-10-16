@@ -25,11 +25,14 @@ import HomeBill from "@/components/HomeBill.vue";
 import HomeCurrency from "@/components/HomeCurrency.vue";
 import { ref, onMounted } from "vue";
 import Loader from "../components/Loader.vue";
+import { useStoreInfo } from "@/stores/info.js";
 
 let loading = ref(true),
-  currency = ref(null);
+  currency = ref(null),
+  storeInfo = ref(useStoreInfo());
 
 onMounted(() => {
-  console.log($storeInfo);
+  console.log('storeInfo')
+  console.log(storeInfo)
 });
 </script>

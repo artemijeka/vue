@@ -8,9 +8,9 @@ import MainLayout from "@/layouts/Main.vue";
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
+  mounted() {},
   computed: {
     layout() {
       // console.log(this.$route.meta.layout)
@@ -36,8 +36,7 @@ export default {
       // date: this.date
     };
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 

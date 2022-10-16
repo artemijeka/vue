@@ -7,17 +7,18 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       meta: {
-        layout: 'empty-layout'
+        layout: 'EmptyLayout'
       },
-      component: ()=>import('../views/Login.vue')
+      // LazyLoading component:
+      component: ()=>import('@/views/Login.vue')
     },
     {
       path: '/register',
       name: 'register',
       meta: {
-        layout: 'empty-layout'
+        layout: 'EmptyLayout'
       },
-      component: ()=>import('../views/Register.vue')
+      component: ()=>import('@/views/Register.vue')
     },
     {
       path: '/',
@@ -25,7 +26,7 @@ const router = createRouter({
       meta: {
         layout: 'main-layout'
       },
-      component: ()=>import('../views/Home.vue')
+      component: ()=>import('@/views/Home.vue')
     },
     {
       path: '/categories',
@@ -33,7 +34,7 @@ const router = createRouter({
       meta: {
         layout: 'main-layout'
       },
-      component: ()=>import('../views/Categories.vue')
+      component: ()=>import('@/views/Categories.vue')
     },
     {
       path: '/detail',
@@ -41,7 +42,7 @@ const router = createRouter({
       meta: {
         layout: 'main-layout'
       },
-      component: ()=>import('../views/Detail.vue')
+      component: ()=>import('@/views/Detail.vue')
     },
     {
       path: '/history',
@@ -49,7 +50,7 @@ const router = createRouter({
       meta: {
         layout: 'main-layout'
       },
-      component: ()=>import('../views/History.vue')
+      component: ()=>import('@/views/History.vue')
     },
     {
       path: '/planning',
@@ -57,7 +58,7 @@ const router = createRouter({
       meta: {
         layout: 'main-layout'
       },
-      component: ()=>import('../views/Planning.vue')
+      component: ()=>import('@/views/Planning.vue')
     },
     {
       path: '/profile',
@@ -65,7 +66,7 @@ const router = createRouter({
       meta: {
         layout: 'main-layout'
       },
-      component: ()=>import('../views/Profile.vue')
+      component: ()=>import('@/views/Profile.vue')
     },
     {
       path: '/record',
@@ -73,7 +74,7 @@ const router = createRouter({
       meta: {
         layout: 'main-layout'
       },
-      component: ()=>import('../views/Record.vue')
+      component: ()=>import('@/views/Record.vue')
     },
     // {
     //   path: '/about',
@@ -81,7 +82,7 @@ const router = createRouter({
     //   // route level code-splitting
     //   // this generates a separate chunk (About.[hash].js) for this route
     //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
+    //   component: () => import('@/views/AboutView.vue')
     // }
   ]
 })

@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import { useAuthStore } from "@/stores/auth";
+import { useStoreAuth } from "@/stores/auth";
 
 export default {
-  name: "empty-layout",
+  name: "EmptyLayout",
   data() {
     return {
-      auth: useAuthStore(),
+      auth: useStoreAuth(),
     };
   },
   computed: {
