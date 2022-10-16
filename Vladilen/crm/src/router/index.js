@@ -1,80 +1,80 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/login',
-      name: 'login',
+      path: "/login",
+      name: "login",
       meta: {
-        layout: 'EmptyLayout'
+        layout: "EmptyLayout",
       },
       // LazyLoading component:
-      component: ()=>import('@/views/Login.vue')
+      component: () => import("@/views/Login.vue"),
     },
     {
-      path: '/register',
-      name: 'register',
+      path: "/register",
+      name: "register",
       meta: {
-        layout: 'EmptyLayout'
+        layout: "EmptyLayout",
       },
-      component: ()=>import('@/views/Register.vue')
+      component: () => import("@/views/Register.vue"),
     },
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "home",
       meta: {
-        layout: 'main-layout'
+        layout: "MainLayout",
       },
-      component: ()=>import('@/views/Home.vue')
+      component: () => import("@/views/Home.vue"),
     },
     {
-      path: '/categories',
-      name: 'categories',
+      path: "/categories",
+      name: "categories",
       meta: {
-        layout: 'main-layout'
+        layout: "MainLayout",
       },
-      component: ()=>import('@/views/Categories.vue')
+      component: () => import("@/views/Categories.vue"),
     },
     {
-      path: '/detail',
-      name: 'detail',
+      path: "/detail",
+      name: "detail",
       meta: {
-        layout: 'main-layout'
+        layout: "MainLayout",
       },
-      component: ()=>import('@/views/Detail.vue')
+      component: () => import("@/views/Detail.vue"),
     },
     {
-      path: '/history',
-      name: 'history',
+      path: "/history",
+      name: "history",
       meta: {
-        layout: 'main-layout'
+        layout: "MainLayout",
       },
-      component: ()=>import('@/views/History.vue')
+      component: () => import("@/views/History.vue"),
     },
     {
-      path: '/planning',
-      name: 'planning',
+      path: "/planning",
+      name: "planning",
       meta: {
-        layout: 'main-layout'
+        layout: "MainLayout",
       },
-      component: ()=>import('@/views/Planning.vue')
+      component: () => import("@/views/Planning.vue"),
     },
     {
-      path: '/profile',
-      name: 'profile',
+      path: "/profile",
+      name: "profile",
       meta: {
-        layout: 'main-layout'
+        layout: "MainLayout",
       },
-      component: ()=>import('@/views/Profile.vue')
+      component: () => import("@/views/Profile.vue"),
     },
     {
-      path: '/record',
-      name: 'record',
+      path: "/record",
+      name: "record",
       meta: {
-        layout: 'main-layout'
+        layout: "MainLayout",
       },
-      component: ()=>import('@/views/Record.vue')
+      component: () => import("@/views/Record.vue"),
     },
     // {
     //   path: '/about',
@@ -84,7 +84,7 @@ const router = createRouter({
     //   // which is lazy-loaded when the route is visited.
     //   component: () => import('@/views/AboutView.vue')
     // }
-  ]
-})
+  ],
+});
 
-export default router
+export default router;

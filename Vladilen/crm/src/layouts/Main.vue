@@ -5,7 +5,7 @@ import SideNav from "@/components/SideNav.vue";
 import { useStoreInfo } from "@/stores/info";
 
 export default {
-  name: "main-layout",
+  name: "MainLayout",
   data() {
     return {
       sidenavIsOpen: true,
@@ -29,7 +29,7 @@ export default {
 
 <template>
   <div>
-    <div class="app-main-layout">
+    <div class="app-MainLayout">
       <NavBar @sidenav-toggle="sidenavIsOpen = !sidenavIsOpen" />
 
       <SideNav :sidenavIsOpen="sidenavIsOpen" />
