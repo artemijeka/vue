@@ -10,7 +10,7 @@ import MainLayout from "@/layouts/Main.vue";
 let route = useRoute();
 
 onMounted(() => {
-  console.log(route.meta.layout);
+  // console.log(route);
 });
 
 let layout = computed(() => {

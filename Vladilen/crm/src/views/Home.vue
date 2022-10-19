@@ -13,7 +13,7 @@
 
       <div v-else class="row">
         <HomeBill />
-
+          test
         <HomeCurrency />
       </div>
     </div>
@@ -32,7 +32,7 @@ let loading = ref(true),
   storeInfo = ref(useStoreInfo());
 
 onMounted(() => {
-  console.log('storeInfo')
-  console.log(storeInfo)
+  console.log("storeInfo");
+  console.log(storeInfo);
 });
 </script>
