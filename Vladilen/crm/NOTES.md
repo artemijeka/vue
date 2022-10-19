@@ -1,8 +1,9 @@
 Владилен делал на vue 2 + vuex
   я переписываю на vue3 (composition api) + pinia
 
-Остановился
-  https://youtu.be/Jimf6cunaY4?t=620
+Остановился тут
+  почти заново делаю на composition api
+  https://youtu.be/Pm2aASoksJU?t=1189
 
 Дополнительно установил
   npm i register-service-worker
