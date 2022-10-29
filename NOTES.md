@@ -1,24 +1,20 @@
-CDNs
-  https://cdnjs.com/libraries/vue
-  https://cdn.jsdelivr.net/npm/vue@next/dist/
-  https://unpkg.com/browse/vue@3.2.37/
-
-Установка и системы сборки
-  1.install-and-builders/NOTES.md
+Остановился на
+  Events
+    https://vuejs.org/guide/components/events.html
 
 
 
 ----------------------------------------------------------------------
 
 DOCUMENTATION
-  options api
-    +основы прочёл (Essentials)
-      далее рекомендуют что-то сделать своё на vue, поиграться, (~применяя документацию по основам)!
-      значит далее перехожу к основам nuxtjs!
-      и делаю на основах этих технологий сайт родителям!
-        после перехожу к глубоким познаниям в vue
-          https://vuejs.org/guide/components/registration.html#component-registration
-        и глубоким познаниям в nuxtjs
+  Options API
+    +Essentials прочёл
+      ...далее рекомендуют что-то сделать своё на vue (делаю на основах этих технологий сайт родителям) применяя документацию по основам
+
+  Composition API
+    Components In-Depth
+      ...Events
+        https://vuejs.org/guide/components/events.html
 
   +examples
     +https://vuejs.org/examples/#cells
@@ -80,6 +76,15 @@ Vue Router for Everyone (СТАРАЯ ВЕРСИЯ ПОХОЖЕ)
 
 Application Monitoring in Vue.js with Sentry
   ? https://vueschool.io/lessons/create-a-sentry-project
+
+
+
+----------------------------------------------------------------------
+
+CDNs
+  https://cdnjs.com/libraries/vue
+  https://cdn.jsdelivr.net/npm/vue@next/dist/
+  https://unpkg.com/browse/vue@3.2.37/
 
 
 
