@@ -1,0 +1,1 @@
+[https://vuejs.org/guide/components/events.html](https://vuejs.org/guide/components/events.html)
