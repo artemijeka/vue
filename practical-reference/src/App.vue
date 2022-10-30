@@ -10,6 +10,7 @@ import Select from "./components/Select.vue";
 import RadioAndCheckbox from "./components/RadioAndCheckbox.vue";
 import CheckboxCustomValue from "./components/CheckboxCustomValue.vue";
 import FormModifiers from "./components/FormModifiers.vue";
+import Events from "./components/Events/Events.vue";
 
 export default {
   components: {
@@ -24,6 +25,7 @@ export default {
     RadioAndCheckbox,
     CheckboxCustomValue,
     FormModifiers,
+    Events,
   },
 };
 </script>
@@ -52,6 +54,8 @@ export default {
     <CheckboxCustomValue />
     <hr />
     <FormModifiers />
+    <hr />
+    <Events/>
     <hr />
   </section>
 </template>
